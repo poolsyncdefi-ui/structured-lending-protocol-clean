@@ -1,0 +1,10 @@
+test/
+├── LoanPool.test.js           # ✅ PRINCIPAL - Tests complets
+├── RiskEngine.test.js         # À FAIRE - Tests RiskEngine
+├── CriteriaFilter.test.js     # À FAIRE - Tests filtrage
+├── SpecialOfferManager.test.js # À FAIRE - Tests offres
+├── integration/               # Tests d'intégration
+│   └── FullFlow.test.js
+└── mocks/                     # Contrats mock
+    ├── MockERC20.sol
+    └── MockOracle.sol
