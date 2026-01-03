@@ -2,18 +2,19 @@
 STRUCTURED LENDING PROTOCOL - FULL PROJECT SHARE 
 ============================================================================== 
 GitHub: poolsyncdefi-ui/structured-lending-protocol-clean 
-Date: 03/01/2026 Time: 14:10:57,41 
+Repo URL: https://github.com/poolsyncdefi-ui/structured-lending-protocol-clean 
+Date: 03/01/2026 Time: 14:54:31,46 
  
 [GIT INFORMATION] 
 ------------------------------------------------------------------------------ 
 Branch: main 
-Commit: a50f3b9 
+Commit: d726421 
  
 [CONTRACTS DIRECTORY - *.sol files] 
 ============================================================================== 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\PoolSyncTest.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.20; 
@@ -31,8 +32,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 14: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\test.sol 
-Size: %~z bytes | Modified: 29/12/2025 18:21 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -47,8 +48,8 @@ Size: %~z bytes | Modified: 29/12/2025 18:21
 11: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\core\BondingCurve.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:02 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -279,8 +280,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:02
 227: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\core\DynamicTranche.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:09 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -547,8 +548,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:09
 263: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\core\LoanPool.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:21 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -1291,8 +1292,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:21
 739: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\core\RiskEngine.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:23 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -1645,8 +1646,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:23
 349: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\governance\GovernanceDAO.sol 
-Size: %~z bytes | Modified: 29/12/2025 20:10 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -2205,8 +2206,8 @@ Size: %~z bytes | Modified: 29/12/2025 20:10
 555: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\governance\ReputationToken.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:58 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -2630,8 +2631,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:58
 420: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\infrastructure\FeeDistributor.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -3045,8 +3046,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 410: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\infrastructure\NotificationManager.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -3628,8 +3629,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 578: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\infrastructure\OracleAdapter.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -3909,8 +3910,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 276: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\insurance\DecentralizedGuaranteeFund.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -4426,8 +4427,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 512: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\insurance\InsuranceModule.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -4918,8 +4919,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 487: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\interfaces\ICriteriaFilter.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -4934,8 +4935,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 11: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\interfaces\IInsuranceModule.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -4950,8 +4951,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 11: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\interfaces\ILoanPool.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -4977,8 +4978,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 22: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\interfaces\IRiskEngine.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -5009,8 +5010,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 27: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\interfaces\ISpecialOfferManager.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -5029,8 +5030,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 15: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\interfaces\IStructuredLending.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -5101,8 +5102,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 67: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\mocks\MockERC20.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -5258,8 +5259,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 152: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\nft-market\LoanNFT.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:50 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -5765,8 +5766,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:50
 502: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\nft-market\SecondaryMarket.sol 
-Size: %~z bytes | Modified: 29/12/2025 15:42 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -6074,8 +6075,8 @@ Size: %~z bytes | Modified: 29/12/2025 15:42
 304: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\security\AccessController.sol 
-Size: %~z bytes | Modified: 29/12/2025 16:02 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -6729,8 +6730,8 @@ Size: %~z bytes | Modified: 29/12/2025 16:02
 650: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\security\EmergencyExecutor.sol 
-Size: %~z bytes | Modified: 29/12/2025 16:04 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -7581,8 +7582,8 @@ Size: %~z bytes | Modified: 29/12/2025 16:04
 847: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\security\KYCRegistry.sol 
-Size: %~z bytes | Modified: 29/12/2025 16:06 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -8214,8 +8215,8 @@ Size: %~z bytes | Modified: 29/12/2025 16:06
 628: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\security\RegulatoryReporting.sol 
-Size: %~z bytes | Modified: 29/12/2025 16:14 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // RegulatoryReporting.sol 
 2: // SPDX-License-Identifier: MIT 
@@ -8658,8 +8659,8 @@ Size: %~z bytes | Modified: 29/12/2025 16:14
 439: } 
 ------------------------------------------------------------------------------ 
  
-FILE !contract_count! | D:\structured-lending-protocol-clean\contracts\utils\CriteriaFilter.sol 
-Size: %~z bytes | Modified: 29/12/2025 19:25 
+FILE 0 | !filepath! 
+Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
@@ -8877,8 +8878,8 @@ Size: %~z bytes | Modified: 29/12/2025 19:25
 [SCRIPTS DIRECTORY - *.js, *.bat, *.sh, *.txt files] 
 ============================================================================== 
  
-SCRIPT !script_count! | D:\structured-lending-protocol-clean\scripts\seed-testnet.js 
-Size: %~z bytes | Type: .js | Modified: 18/12/2025 20:51 
+SCRIPT !script_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // scripts/seed-testnet.js 
 2: const hre = require("hardhat"); 
@@ -9082,8 +9083,8 @@ Size: %~z bytes | Type: .js | Modified: 18/12/2025 20:51
 200: }); 
 ------------------------------------------------------------------------------ 
  
-SCRIPT !script_count! | D:\structured-lending-protocol-clean\scripts\Phase 1 - Environnement de Développement.bat 
-Size: %~z bytes | Type: .bat | Modified: 16/12/2025 18:30 
+SCRIPT !script_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: # 1. Configuration initiale 
 2: npm init -y 
@@ -9112,8 +9113,8 @@ Size: %~z bytes | Type: .bat | Modified: 16/12/2025 18:30
 25:     └── FullWorkflow.test.js 
 ------------------------------------------------------------------------------ 
  
-SCRIPT !script_count! | D:\structured-lending-protocol-clean\scripts\Commandes d'Exécution.sh 
-Size: %~z bytes | Type: .sh | Modified: 16/12/2025 18:21 
+SCRIPT !script_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: # 1. Installation des dépendances 
 2: npm install 
@@ -9132,8 +9133,8 @@ Size: %~z bytes | Type: .sh | Modified: 16/12/2025 18:21
 15: npx hardhat verify --network polygon 0xCONTRACT_ADDRESS "Constructor Arg 1" "Arg 2" 
 ------------------------------------------------------------------------------ 
  
-SCRIPT !script_count! | D:\structured-lending-protocol-clean\scripts\Sortie attendue du script _seed-testnet.js_.txt 
-Size: %~z bytes | Type: .txt | Modified: 18/12/2025 20:51 
+SCRIPT !script_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: 🌱 Peuplement du protocole avec des données de test... 
 2: 1. Création des pools de test... 
@@ -9156,8 +9157,8 @@ Size: %~z bytes | Type: .txt | Modified: 18/12/2025 20:51
 [TESTS DIRECTORY - *.js, *.txt files] 
 ============================================================================== 
  
-TEST !test_count! | D:\structured-lending-protocol-clean\test\LoanPool.test.js 
-Size: %~z bytes | Type: .js | Modified: 18/12/2025 20:49 
+TEST !test_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // test/LoanPool.test.js - Suite de tests principale 
 2: const { expect } = require("chai"); 
@@ -9461,8 +9462,8 @@ Size: %~z bytes | Type: .js | Modified: 18/12/2025 20:49
 300: }); 
 ------------------------------------------------------------------------------ 
  
-TEST !test_count! | D:\structured-lending-protocol-clean\test\test-security-v2.js 
-Size: %~z bytes | Type: .js | Modified: 13/12/2025 22:08 
+TEST !test_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // test-security-v2.js 
 2: const { expect } = require("chai"); 
@@ -9724,8 +9725,8 @@ Size: %~z bytes | Type: .js | Modified: 13/12/2025 22:08
 258: }); 
 ------------------------------------------------------------------------------ 
  
-TEST !test_count! | D:\structured-lending-protocol-clean\test\test-v2-complete.js 
-Size: %~z bytes | Type: .js | Modified: 13/12/2025 21:38 
+TEST !test_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // test-v2-complete.js 
 2: const { expect } = require("chai"); 
@@ -10018,8 +10019,8 @@ Size: %~z bytes | Type: .js | Modified: 13/12/2025 21:38
 289: }); 
 ------------------------------------------------------------------------------ 
  
-TEST !test_count! | D:\structured-lending-protocol-clean\test\Structure des tests.txt 
-Size: %~z bytes | Type: .txt | Modified: 18/12/2025 20:50 
+TEST !test_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: test/ 
 2: ├── LoanPool.test.js           # ✅ PRINCIPAL - Tests complets 
@@ -10033,8 +10034,8 @@ Size: %~z bytes | Type: .txt | Modified: 18/12/2025 20:50
 10:     └── MockOracle.sol 
 ------------------------------------------------------------------------------ 
  
-TEST !test_count! | D:\structured-lending-protocol-clean\test\mocks\MockERC20.test.js 
-Size: %~z bytes | Type: .js | Modified: 18/12/2025 21:08 
+TEST !test_count! | !filepath! 
+Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
 1: // test/mocks/MockERC20.test.js 
 2: const { expect } = require("chai"); 
@@ -10192,5 +10193,5 @@ Total script files: 4
 Total test files: 5 
 Total code files: 36 
  
-Generated: 03/01/2026 14:11:01,82 
+Generated: 03/01/2026 14:54:35,86 
 ============================================================================== 
