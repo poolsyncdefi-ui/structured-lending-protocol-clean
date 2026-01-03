@@ -49,4 +49,16 @@ project_index*.json
 *.bat
 *.ps1
 git_*.ps1
-quick_*.ps1
+quick_*.ps1# Index file for sharing 
+share_index.json 
+
+# Sharing system files
+FULL_PROJECT_WITH_LINES.json
+DIFF_CHANGES.json
+last_share_tracking.json
+share_*.json
+
+# Pour éviter de commiter les fichiers de partage
+*_WITH_LINES.json
+*_CHANGES.json
+*_tracking.json
