@@ -1,29 +1,32 @@
-# Dependencies
-node_modules/
-package-lock.json
-yarn.lock
-
 # Hardhat
 artifacts/
 cache/
 coverage/
 typechain-types/
 
-# Environment
+# Node
+node_modules/
+package-lock.json
+
+# Environnement et secrets
 .env
 .env.local
 .env.production
+*.key
+*.pem
+secrets.json
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# System
+# Systeme
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Archives volumineuses
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
 
 # Logs
 *.log
@@ -31,25 +34,19 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Archives
-*.zip
-*.rar
-*.7z
-*.tar
-*.gz
-
-# Large files
-*.mp4
-*.avi
-*.mov
-
-# Temporary
+# Fichiers temporaires
 tmp/
 temp/
 *.tmp
 *.temp
 
-# Documentation
-*.pdf
-*.doc
-*.docx
+# Fichiers d'index pour partage
+index_assistant.json
+share_index.json
+project_index*.json
+
+# Anciens scripts (ne pas commiter)
+*.bat
+*.ps1
+git_*.ps1
+quick_*.ps1
