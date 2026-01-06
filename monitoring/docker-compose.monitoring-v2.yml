@@ -1,0 +1,180 @@
+# docker-compose.monitoring-v2.yml
+version: '3.8'
+
+services:
+  # Prometheus pour la collecte de métriques
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: lending-prometheus
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+      - '--web.enable-lifecycle'
+      - '--web.enable-admin-api'
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  # Grafana pour les dashboards
+  grafana:
+    image: grafana/grafana:10.0.0
+    container_name: lending-grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin123}
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  # Node Exporter pour les métriques système
+  node-exporter:
+    image: prom/node-exporter:v1.6.0
+    container_name: lending-node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    ports:
+      - "9100:9100"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  # Blackbox Exporter pour les probes HTTP
+  blackbox-exporter:
+    image: prom/blackbox-exporter:v0.24.0
+    container_name: lending-blackbox-exporter
+    volumes:
+      - ./monitoring/blackbox/blackbox.yml:/etc/blackbox_exporter/config.yml
+    ports:
+      - "9115:9115"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  # Alert Manager pour les alertes
+  alertmanager:
+    image: prom/alertmanager:v0.25.0
+    container_name: lending-alertmanager
+    volumes:
+      - ./monitoring/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - alertmanager_data:/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/alertmanager'
+      - '--cluster.listen-address='
+    ports:
+      - "9093:9093"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  # Redis pour le cache des métriques
+  redis:
+    image: redis:7-alpine
+    container_name: lending-redis
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis123}
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  # Elasticsearch pour les logs
+  elasticsearch:
+    image: elasticsearch:8.10.0
+    container_name: lending-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  # Kibana pour la visualisation des logs
+  kibana:
+    image: kibana:8.10.0
+    container_name: lending-kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - monitoring
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+
+  # Métriques blockchain spécifiques
+  blockchain-exporter:
+    build:
+      context: ./monitoring/blockchain-exporter
+      dockerfile: Dockerfile
+    container_name: lending-blockchain-exporter
+    environment:
+      - ETH_RPC_URL=${ETH_RPC_URL}
+      - CONTRACT_ADDRESSES=${CONTRACT_ADDRESSES}
+      - EXPORT_INTERVAL=30
+    ports:
+      - "9666:9666"
+    networks:
+      - monitoring
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  # Agent de surveillance des smart contracts
+  contract-monitor:
+    build:
+      context: ./monitoring/contract-monitor
+      dockerfile: Dockerfile
+    container_name: lending-contract-monitor
+    environment:
+      - WEB3_PROVIDER=${WEB3_PROVIDER}
+      - REDIS_URL=redis://redis:6379
+      - ALERT_WEBHOOK=${DISCORD_WEBHOOK}
+    volumes:
+      - ./contracts:/app/contracts:ro
+    networks:
+      - monitoring
+    depends_on:
+      - redis
+      - alertmanager
+    restart: unless-stopped
+
+networks:
+  monitoring:
+    driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:
+  alertmanager_data:
+  redis_data:
+  elasticsearch_data:

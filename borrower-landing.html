@@ -1,0 +1,539 @@
+<!-- borrower-landing.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empruntez Sans Vendre Vos Crypto | Structured Lending</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #10B981;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Features */
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* How it works */
+        .how-it-works {
+            padding: 4rem 0;
+            background: #F8FAFC;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            text-align: center;
+            max-width: 250px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Calculator */
+        .calculator {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .calc-container {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .calc-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .calc-result {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 4rem 0;
+            background: #F8FAFC;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 1rem;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Structured Lending</a>
+                <div class="nav-links">
+                    <a href="#features">Avantages</a>
+                    <a href="#how-it-works">Fonctionnement</a>
+                    <a href="#calculator">Simulation</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#" class="cta-button">Commencer</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Empruntez sans vendre vos crypto</h1>
+            <p>Obtenez des liquidités immédiates tout en conservant l'exposition à vos actifs cryptographiques. Taux compétitifs, processus simplifié, sécurité maximale.</p>
+            <a href="#calculator" class="cta-button">Simuler mon prêt gratuitement</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Structured Lending ?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rapidité exceptionnelle</h3>
+                    <p>Obtenez votre prêt en moins de 24h. Processus 100% en ligne, validation automatique, fonds disponibles immédiatement.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Gardez vos crypto</h3>
+                    <p>Ne vendez pas vos actifs au mauvais moment. Empruntez contre collatéral et profitez de la hausse future.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Taux personnalisés</h3>
+                    <p>Votre taux est calculé selon votre profil. Plus vous êtes fiable, meilleur est votre taux. Transparence totale.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Sécurité maximale</h3>
+                    <p>Vos actifs sont protégés par des smart contracts audités. Assurance optionnelle disponible pour tranquillité d'esprit.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Flexibilité totale</h3>
+                    <p>Choisissez la durée (1-12 mois), remboursez à l'avance sans frais, ajustez votre collatéral selon vos besoins.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Marché secondaire</h3>
+                    <p>Vendez votre prêt à tout moment sur notre marché secondaire. Liquidité garantie, prix de marché équitable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Connectez votre wallet</h3>
+                    <p>Utilisez MetaMask ou votre wallet préféré. Vérifiez votre identité en 5 minutes.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Configurez votre prêt</h3>
+                    <p>Choisissez montant, durée, collatéral. Obtenez votre taux personnalisé instantanément.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Déposez le collatéral</h3>
+                    <p>Transférez vos crypto (ETH, BTC, USDC...). Sécurisé par smart contract audités.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Recevez vos fonds</h3>
+                    <p>Les fonds sont transférés sur votre compte en quelques minutes. Utilisez-les comme vous voulez.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <h2 class="section-title">Simulez votre prêt</h2>
+            <div class="calc-container">
+                <h3 style="margin-bottom: 1rem; text-align: center;">Calculateur de prêt</h3>
+                
+                <label style="display: block; margin-bottom: 0.5rem;">Montant souhaité (€)</label>
+                <input type="range" id="loanAmount" min="1000" max="100000" value="10000" class="calc-input">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <span id="amountValue">10,000 €</span>
+                </div>
+                
+                <label style="display: block; margin-bottom: 0.5rem;">Durée (mois)</label>
+                <select id="loanDuration" class="calc-input">
+                    <option value="3">3 mois</option>
+                    <option value="6" selected>6 mois</option>
+                    <option value="12">12 mois</option>
+                </select>
+                
+                <label style="display: block; margin-bottom: 0.5rem;">Type de collatéral</label>
+                <select id="collateralType" class="calc-input">
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="USDC">USDC</option>
+                </select>
+                
+                <button onclick="calculateLoan()" style="width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+                    Calculer mon offre
+                </button>
+                
+                <div id="result" class="calc-result" style="display: none;">
+                    <h4>Votre offre personnalisée</h4>
+                    <p>Taux annuel: <span id="rate">5.8%</span></p>
+                    <p>Mensualité: <span id="monthly">1,750 €</span></p>
+                    <p>Collatéral requis: <span id="collateral">0.5 ETH</span></p>
+                    <button onclick="startApplication()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: white; color: var(--primary); border: none; border-radius: 5px; font-weight: 600; cursor: pointer;">
+                        Accepter cette offre
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Est-ce que je risque de perdre mes crypto ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer" style="display: none; margin-top: 0.5rem;">
+                    Non, tant que vous remboursez votre prêt à temps. Vos crypto sont placées en collatéral dans un smart contract sécurisé. En cas de remboursement, vous les récupérez intégralement.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Quel est le taux d'intérêt moyen ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer" style="display: none; margin-top: 0.5rem;">
+                    Les taux varient de 4% à 12% selon votre profil de risque. Plus vous avez un bon historique et un collatéral stable, plus votre taux sera bas.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Puis-je rembourser à l'avance ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer" style="display: none; margin-top: 0.5rem;">
+                    Oui, sans aucun frais ! Vous pouvez rembourser votre prêt à tout moment et récupérer immédiatement votre collatéral.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Quelles crypto sont acceptées en collatéral ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer" style="display: none; margin-top: 0.5rem;">
+                    Nous acceptons ETH, BTC, USDC, DAI et plusieurs autres actifs majeurs. La liste complète est disponible dans votre espace personnel.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Combien de temps pour obtenir un prêt ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer" style="display: none; margin-top: 0.5rem;">
+                    Moins de 24h pour la première demande (incluant la vérification KYC). Pour les demandes suivantes, quelques minutes seulement.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;">Prêt à obtenir votre prêt ?</h2>
+            <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Rejoignez des milliers d'utilisateurs qui préservent leur exposition crypto tout en accédant à des liquidités.
+            </p>
+            <a href="#" class="cta-button" style="background: var(--secondary);">Commencer maintenant</a>
+            
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>© 2024 Structured Lending Protocol. Tous droits réservés.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    Les services financiers sont fournis sous licence. Vos crypto sont sécurisées par des smart contracts audités.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Calculator functionality
+        const loanAmount = document.getElementById('loanAmount');
+        const amountValue = document.getElementById('amountValue');
+        
+        loanAmount.addEventListener('input', function() {
+            amountValue.textContent = new Intl.NumberFormat('fr-FR').format(this.value) + ' €';
+        });
+        
+        function calculateLoan() {
+            const amount = loanAmount.value;
+            const duration = document.getElementById('loanDuration').value;
+            const collateral = document.getElementById('collateralType').value;
+            
+            // Simulate calculation
+            let rate = 5.8;
+            if (duration === '3') rate = 4.5;
+            if (duration === '12') rate = 7.2;
+            if (collateral === 'BTC') rate -= 0.5;
+            if (collateral === 'USDC') rate -= 0.3;
+            
+            const monthly = (amount * (1 + rate/100)) / duration;
+            const collateralAmount = amount * 1.5 / getCollateralPrice(collateral);
+            
+            document.getElementById('rate').textContent = rate.toFixed(1) + '%';
+            document.getElementById('monthly').textContent = new Intl.NumberFormat('fr-FR', { 
+                maximumFractionDigits: 0 
+            }).format(monthly) + ' €';
+            document.getElementById('collateral').textContent = collateralAmount.toFixed(2) + ' ' + collateral;
+            
+            document.getElementById('result').style.display = 'block';
+        }
+        
+        function getCollateralPrice(type) {
+            const prices = { ETH: 2000, BTC: 40000, USDC: 1 };
+            return prices[type];
+        }
+        
+        function startApplication() {
+            alert('Redirection vers le processus de demande de prêt...');
+            // In reality: window.location.href = '/application';
+        }
+        
+        // FAQ functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                icon.textContent = '-';
+            }
+        }
+        
+        // Initialize calculator
+        calculateLoan();
+    </script>
+</body>
+</html>

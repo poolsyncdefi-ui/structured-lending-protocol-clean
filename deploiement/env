@@ -1,0 +1,4 @@
+# .env
+PRIVATE_KEY="votre_clé_privée_sans_0x"
+POLYGONSCAN_API_KEY="votre_api_key_polygonscan"
+REPORT_GAS="true"

@@ -1,0 +1,665 @@
+<!-- lender-landing.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investissez dans des Prêts Crypto | Structured Lending</title>
+    <style>
+        :root {
+            --primary: #1E40AF;
+            --secondary: #059669;
+            --accent: #D97706;
+            --dark: #111827;
+            --light: #F3F4F6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #1E3A8A 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Investment Options */
+        .options {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .option-card {
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .option-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0 10px 0 10px;
+        }
+        
+        .option-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .option-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .option-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .option-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        
+        .option-features li:before {
+            content: "✓";
+            color: var(--secondary);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        
+        /* Risk Management */
+        .risk-management {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+        
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .risk-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .risk-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Calculator */
+        .calculator {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .calc-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .calc-slider {
+            width: 100%;
+            margin: 1rem 0;
+        }
+        
+        .calc-output {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        
+        /* CTA */
+        .final-cta {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1E3A8A 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                gap: 2rem;
+            }
+            
+            .option-grid,
+            .risk-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Structured Lending</a>
+                <div class="nav-links">
+                    <a href="#options">Stratégies</a>
+                    <a href="#risk">Sécurité</a>
+                    <a href="#calculator">Simulation</a>
+                    <a href="#testimonials">Témoignages</a>
+                    <a href="#" class="cta-button">Investir maintenant</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Des rendements stables grâce aux prêts crypto</h1>
+            <p>Investissez dans des prêts collatéralisés avec gestion professionnelle du risque. Rendements de 6% à 18% par an.</p>
+            <a href="#calculator" class="cta-button" style="background: var(--secondary);">Simuler mes rendements</a>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">8.2%</div>
+                    <div class="stat-label">Rendement moyen annuel</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">99.4%</div>
+                    <div class="stat-label">Taux de remboursement</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$42M+</div>
+                    <div class="stat-label">Capital déployé</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Défauts non couverts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Options -->
+    <section id="options" class="options">
+        <div class="container">
+            <h2 class="section-title">Choisissez votre stratégie d'investissement</h2>
+            <div class="option-grid">
+                <div class="option-card">
+                    <div class="option-badge">Risque faible</div>
+                    <div class="option-icon">🛡️</div>
+                    <h3>Tranche Sécurisée</h3>
+                    <p><strong>Rendement : 4-8% annuel</strong></p>
+                    <p>Priorité de remboursement, assurance incluse, risque minimal.</p>
+                    <ul class="option-features">
+                        <li>Protection prioritaire en cas de défaut</li>
+                        <li>Assurance 100% incluse</li>
+                        <li>Rendements mensuels stables</li>
+                        <li>Liquidité via marché secondaire</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Investir dans cette tranche</a>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-badge">Risque modéré</div>
+                    <div class="option-icon">⚖️</div>
+                    <h3>Tranche Équilibrée</h3>
+                    <p><strong>Rendement : 8-14% annuel</strong></p>
+                    <p>Équilibre risque/rendement optimal, diversification automatique.</p>
+                    <ul class="option-features">
+                        <li>Diversification sur 100+ prêts</li>
+                        <li>Assurance optionnelle disponible</li>
+                        <li>Rééquilibrage automatique</li>
+                        <li>Suivi performance détaillé</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Investir dans cette tranche</a>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-badge">Risque élevé</div>
+                    <div class="option-icon">🚀</div>
+                    <h3>Tranche Performance</h3>
+                    <p><strong>Rendement : 14-25% annuel</strong></p>
+                    <p>Rendements maximisés pour acceptation risque contrôlé.</p>
+                    <ul class="option-features">
+                        <li>Rendements potentiellement élevés</li>
+                        <li>Couverture partielle assurance</li>
+                        <li>Gestion active recommandée</li>
+                        <li>Opportunités marché spéciales</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Investir dans cette tranche</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management -->
+    <section id="risk" class="risk-management">
+        <div class="container">
+            <h2 class="section-title">Votre capital est protégé à chaque étape</h2>
+            <div class="risk-grid">
+                <div class="risk-item">
+                    <div class="risk-icon">🔍</div>
+                    <h3>Sélection rigoureuse</h3>
+                    <p>Notre moteur de risque analyse chaque emprunteur avec 150+ critères avant approbation.</p>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon">💎</div>
+                    <h3>Collatéral sur-garanti</h3>
+                    <p>Minimum 150% de collatéral exigé. Valorisation en temps réel via multiples oracles.</p>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon">🛡️</div>
+                    <h3>Assurance décentralisée</h3>
+                    <p>Pool d'assurance capitalisé à 20M$ pour couvrir les défauts imprévus.</p>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon">📊</div>
+                    <h3>Diversification automatique</h3>
+                    <p>Votre capital est réparti sur des dizaines de prêts différents automatiquement.</p>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon">⚡</div>
+                    <h3>Liquidité garantie</h3>
+                    <p>Vendez votre position à tout moment sur notre marché secondaire actif.</p>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon">🏛️</div>
+                    <h3>Conformité totale</h3>
+                    <p>KYC obligatoire, reporting réglementaire, audit indépendant trimestriel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <h2 class="section-title">Simulez vos rendements potentiels</h2>
+            <div class="calc-container">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Calculateur d'investissement</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Capital à investir (€)</label>
+                    <input type="range" id="investmentAmount" min="1000" max="100000" value="10000" class="calc-slider">
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span id="investmentValue">10,000 €</span>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Stratégie d'investissement</label>
+                    <select id="strategy" style="width: 100%; padding: 0.75rem; border: 1px solid #E5E7EB; border-radius: 5px;">
+                        <option value="safe">Tranche Sécurisée (4-8%)</option>
+                        <option value="balanced" selected>Tranche Équilibrée (8-14%)</option>
+                        <option value="performance">Tranche Performance (14-25%)</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Durée de l'investissement</label>
+                    <select id="duration" style="width: 100%; padding: 0.75rem; border: 1px solid #E5E7EB; border-radius: 5px;">
+                        <option value="6">6 mois</option>
+                        <option value="12" selected>12 mois</option>
+                        <option value="24">24 mois</option>
+                    </select>
+                </div>
+                
+                <button onclick="calculateReturns()" style="width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 5px; font-size: 1rem; font-weight: 600; cursor: pointer;">
+                    Calculer mes rendements
+                </button>
+                
+                <div id="returnsResult" class="calc-output" style="display: none;">
+                    <h4 style="margin-bottom: 1rem;">Projection de vos rendements</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Rendement annuel estimé</div>
+                            <div style="font-size: 1.5rem; font-weight: bold;" id="annualReturn">9.2%</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Gains totaux estimés</div>
+                            <div style="font-size: 1.5rem; font-weight: bold;" id="totalGains">920 €</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <div style="font-size: 0.9rem;">Ces projections sont basées sur les performances historiques et ne garantissent pas les résultats futurs.</div>
+                    </div>
+                    <button onclick="startInvesting()" style="width: 100%; margin-top: 1.5rem; padding: 0.75rem; background: white; color: var(--primary); border: none; border-radius: 5px; font-weight: 600; cursor: pointer;">
+                        Commencer à investir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Ce que disent nos investisseurs</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Je diversifie mon portefeuille crypto depuis 18 mois avec Structured Lending. Rendements stables, interface claire, équipe réactive. La gestion du risque est professionnelle."</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <div style="font-weight: 600;">Marie L.</div>
+                            <div style="font-size: 0.9rem; opacity: 0.7;">Investisseuse depuis 2022</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Après avoir testé plusieurs plateformes DeFi, je reste chez Structured Lending pour leur transparence et leur sérieux. Les rapports mensuels sont détaillés, je sais exactement où va mon argent."</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <div style="font-weight: 600;">Thomas B.</div>
+                            <div style="font-size: 0.9rem; opacity: 0.7;">Portefeuille 85K€</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"La possibilité de vendre sur le marché secondaire m'a sauvé quand j'ai eu besoin de liquidités rapides. Le système fonctionne vraiment comme promis."</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <div style="font-weight: 600;">Sophie K.</div>
+                            <div style="font-size: 0.9rem; opacity: 0.7;">Investisseuse institutionnelle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Prêt à faire travailler votre capital ?</h2>
+            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.9;">
+                Rejoignez 4,200+ investisseurs qui génèrent des rendements passifs sur leurs crypto.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="cta-button" style="background: var(--secondary);">Commencer avec 1,000€</a>
+                <a href="#" class="cta-button" style="background: transparent; border: 2px solid white;">Prendre rendez-vous conseil</a>
+            </div>
+            <div style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.8;">
+                ⚠️ Les investissements présentent des risques, y compris la perte en capital. Les performances passées ne préjugent pas des résultats futurs.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; text-align: left;">
+                <div style="min-width: 200px; margin-bottom: 1rem;">
+                    <div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem;">Structured Lending</div>
+                    <div>Investissement responsable dans les prêts crypto.</div>
+                </div>
+                
+                <div style="min-width: 200px; margin-bottom: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Pour les investisseurs</div>
+                    <div><a href="#" style="color: white; text-decoration: none; opacity: 0.8;">Stratégies d'investissement</a></div>
+                    <div><a href="#" style="color: white; text-decoration: none; opacity: 0.8;">Calculateur de rendements</a></div>
+                    <div><a href="#" style="color: white; text-decoration: none; opacity: 0.8;">Rapports de performance</a></div>
+                </div>
+                
+                <div style="min-width: 200px; margin-bottom: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Sécurité & Conformité</div>
+                    <div><a href="#" style="color: white; text-decoration: none; opacity: 0.8;">Audits de sécurité</a></div>
+                    <div><a href="#" style="color: white; text-decoration: none; opacity: 0.8;">Rapports réglementaires</a></div>
+                    <div><a href="#" style="color: white; text-decoration: none; opacity: 0.8;">Protection des fonds</a></div>
+                </div>
+                
+                <div style="min-width: 200px; margin-bottom: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Contact</div>
+                    <div style="opacity: 0.8;">investors@structuredlending.io</div>
+                    <div style="opacity: 0.8;">Support 24/7 sur Discord</div>
+                </div>
+            </div>
+            
+            <div style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>© 2024 Structured Lending Protocol. Tous droits réservés.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">
+                    Services d'investissement régulés. Les crypto-actifs sont volatils, investissez uniquement ce que vous pouvez vous permettre de perdre.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Investment calculator
+        const investmentAmount = document.getElementById('investmentAmount');
+        const investmentValue = document.getElementById('investmentValue');
+        
+        investmentAmount.addEventListener('input', function() {
+            investmentValue.textContent = new Intl.NumberFormat('fr-FR').format(this.value) + ' €';
+        });
+        
+        function calculateReturns() {
+            const amount = parseFloat(investmentAmount.value);
+            const strategy = document.getElementById('strategy').value;
+            const duration = parseInt(document.getElementById('duration').value);
+            
+            // Base returns by strategy
+            let baseReturn;
+            switch(strategy) {
+                case 'safe': baseReturn = 0.06; break; // 6%
+                case 'balanced': baseReturn = 0.11; break; // 11%
+                case 'performance': baseReturn = 0.19; break; // 19%
+                default: baseReturn = 0.11;
+            }
+            
+            // Adjust for duration (longer = potentially higher returns)
+            if (duration >= 24) baseReturn *= 1.1;
+            
+            const annualReturn = (baseReturn * 100).toFixed(1);
+            const totalGains = amount * baseReturn * (duration / 12);
+            
+            document.getElementById('annualReturn').textContent = annualReturn + '%';
+            document.getElementById('totalGains').textContent = new Intl.NumberFormat('fr-FR', {
+                maximumFractionDigits: 0
+            }).format(totalGains) + ' €';
+            
+            document.getElementById('returnsResult').style.display = 'block';
+        }
+        
+        function startInvesting() {
+            const amount = investmentAmount.value;
+            const strategy = document.getElementById('strategy').value;
+            
+            alert(`Redirection vers l'ouverture de compte avec ${amount}€ en stratégie ${strategy}...`);
+            // In reality: window.location.href = `/invest?amount=${amount}&strategy=${strategy}`;
+        }
+        
+        // Initialize calculator
+        calculateReturns();
+    </script>
+</body>
+</html>
