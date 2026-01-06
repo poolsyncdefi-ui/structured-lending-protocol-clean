@@ -1,0 +1,689 @@
+
+========================================
+  FINAL SHARE - BATCH ONLY
+========================================
+
+1. CREATE FULL SHARE (all files with line numbers)
+2. CREATE DIFF SHARE (changed files only)
+3. GIT COMMIT + PUSH
+4. EXIT
+
+Enter choice (1-4): 4
+PS D:\structured-lending-protocol-clean> npm install --save-dev hardhat
+npm warn skipping integrity check for git dependency ssh://git@github.com/matter-labs/era-contracts.git
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@5.0.15: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.1.7: Glob versions prior to v9 are no longer supported
+npm warn gitignore-fallback No .npmignore file found, using .gitignore for file exclusion. Consider creating a .npmignore file to explicitly control published files.
+
+added 714 packages, and audited 715 packages in 3m
+
+142 packages are looking for funding
+  run `npm fund` for details
+
+21 vulnerabilities (16 low, 3 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+PS D:\structured-lending-protocol-clean> npm audit
+# npm audit report
+
+@openzeppelin/contracts  3.2.0 - 4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts
+node_modules/@openzeppelin/contracts-4.7.3
+node_modules/@openzeppelin/contracts-4.8.3
+  @arbitrum/nitro-contracts  *
+  Depends on vulnerable versions of @offchainlabs/upgrade-executor
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  Depends on vulnerable versions of patch-package
+  node_modules/@arbitrum/nitro-contracts
+    @chainlink/contracts  >=1.0.0-beta.0
+    Depends on vulnerable versions of @arbitrum/nitro-contracts
+    Depends on vulnerable versions of @openzeppelin/contracts
+    node_modules/@chainlink/contracts
+  @offchainlabs/upgrade-executor  *
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  node_modules/@offchainlabs/upgrade-executor
+
+@openzeppelin/contracts-upgradeable  <=4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts-upgradeable
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts-upgradeable
+
+cookie  <0.7.0
+cookie accepts cookie name, path, and domain with out of bounds characters - https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+No fix available
+node_modules/cookie
+  @sentry/node  4.0.0-beta.0 - 7.74.2-alpha.1
+  Depends on vulnerable versions of cookie
+  node_modules/@sentry/node
+    hardhat  0.1.0-rc.0 - 3.0.0-next.32
+    Depends on vulnerable versions of @sentry/node
+    Depends on vulnerable versions of solc
+    node_modules/hardhat
+      @nomicfoundation/hardhat-chai-matchers  *
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-chai-matchers
+      @nomicfoundation/hardhat-ethers  <=3.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ethers
+        @nomicfoundation/hardhat-toolbox  *
+        Depends on vulnerable versions of @nomicfoundation/hardhat-chai-matchers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ignition-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-network-helpers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+        Depends on vulnerable versions of @typechain/hardhat
+        Depends on vulnerable versions of hardhat
+        Depends on vulnerable versions of hardhat-gas-reporter
+        Depends on vulnerable versions of solidity-coverage
+        node_modules/@nomicfoundation/hardhat-toolbox
+      @nomicfoundation/hardhat-ignition  <=0.15.16
+      Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition
+      @nomicfoundation/hardhat-ignition-ethers  <=0.15.17
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ignition
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition-ethers
+      @nomicfoundation/hardhat-network-helpers  <=1.1.2
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-network-helpers
+      @nomicfoundation/hardhat-verify  <=2.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-verify
+      @typechain/hardhat  *
+      Depends on vulnerable versions of hardhat
+      node_modules/@typechain/hardhat
+      hardhat-gas-reporter  *
+      Depends on vulnerable versions of hardhat
+      node_modules/hardhat-gas-reporter
+      solidity-coverage  >=0.8.0-beta.0
+      Depends on vulnerable versions of hardhat
+      node_modules/solidity-coverage
+
+tmp  <=0.2.3
+tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter - https://github.com/advisories/GHSA-52f5-9888-hmc6
+No fix available
+node_modules/tmp
+  patch-package  <=8.0.0 || >=8.1.0-canary
+  Depends on vulnerable versions of tmp
+  node_modules/patch-package
+  solc  >=0.5.1
+  Depends on vulnerable versions of tmp
+  node_modules/solc
+
+21 vulnerabilities (16 low, 3 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+npm warn audit No fix available for hardhat@0.1.0-rc.0 - 3.0.0-next.32
+npm warn audit No fix available for @nomicfoundation/hardhat-toolbox@*
+
+changed 2 packages, and audited 715 packages in 20s
+
+142 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+@openzeppelin/contracts  3.2.0 - 4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts
+node_modules/@openzeppelin/contracts-4.7.3
+node_modules/@openzeppelin/contracts-4.8.3
+  @arbitrum/nitro-contracts  *
+  Depends on vulnerable versions of @offchainlabs/upgrade-executor
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  Depends on vulnerable versions of patch-package
+  node_modules/@arbitrum/nitro-contracts
+    @chainlink/contracts  >=1.0.0-beta.0
+    Depends on vulnerable versions of @arbitrum/nitro-contracts
+    Depends on vulnerable versions of @openzeppelin/contracts
+    node_modules/@chainlink/contracts
+  @offchainlabs/upgrade-executor  *
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  node_modules/@offchainlabs/upgrade-executor
+
+@openzeppelin/contracts-upgradeable  <=4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts-upgradeable
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts-upgradeable
+
+cookie  <0.7.0
+cookie accepts cookie name, path, and domain with out of bounds characters - https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+No fix available
+node_modules/cookie
+  @sentry/node  4.0.0-beta.0 - 7.74.2-alpha.1
+  Depends on vulnerable versions of cookie
+  node_modules/@sentry/node
+    hardhat  0.1.0-rc.0 - 3.0.0-next.32
+    Depends on vulnerable versions of @sentry/node
+    Depends on vulnerable versions of solc
+    node_modules/hardhat
+      @nomicfoundation/hardhat-chai-matchers  *
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-chai-matchers
+      @nomicfoundation/hardhat-ethers  <=3.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ethers
+        @nomicfoundation/hardhat-toolbox  *
+        Depends on vulnerable versions of @nomicfoundation/hardhat-chai-matchers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ignition-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-network-helpers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+        Depends on vulnerable versions of @typechain/hardhat
+        Depends on vulnerable versions of hardhat
+        Depends on vulnerable versions of hardhat-gas-reporter
+        Depends on vulnerable versions of solidity-coverage
+        node_modules/@nomicfoundation/hardhat-toolbox
+      @nomicfoundation/hardhat-ignition  <=0.15.16
+      Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition
+      @nomicfoundation/hardhat-ignition-ethers  <=0.15.17
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ignition
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition-ethers
+      @nomicfoundation/hardhat-network-helpers  <=1.1.2
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-network-helpers
+      @nomicfoundation/hardhat-verify  <=2.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-verify
+      @typechain/hardhat  *
+      Depends on vulnerable versions of hardhat
+      node_modules/@typechain/hardhat
+      hardhat-gas-reporter  *
+      Depends on vulnerable versions of hardhat
+      node_modules/hardhat-gas-reporter
+      solidity-coverage  >=0.8.0-beta.0
+      Depends on vulnerable versions of hardhat
+      node_modules/solidity-coverage
+
+tmp  <=0.2.3
+tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter - https://github.com/advisories/GHSA-52f5-9888-hmc6
+No fix available
+node_modules/tmp
+  patch-package  <=8.0.0 || >=8.1.0-canary
+  Depends on vulnerable versions of tmp
+  node_modules/patch-package
+  solc  >=0.5.1
+  Depends on vulnerable versions of tmp
+  node_modules/solc
+
+21 vulnerabilities (16 low, 3 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+PS D:\structured-lending-protocol-clean> npm audit
+# npm audit report
+
+@openzeppelin/contracts  3.2.0 - 4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts
+node_modules/@openzeppelin/contracts-4.7.3
+node_modules/@openzeppelin/contracts-4.8.3
+  @arbitrum/nitro-contracts  *
+  Depends on vulnerable versions of @offchainlabs/upgrade-executor
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  Depends on vulnerable versions of patch-package
+  node_modules/@arbitrum/nitro-contracts
+    @chainlink/contracts  >=1.0.0-beta.0
+    Depends on vulnerable versions of @arbitrum/nitro-contracts
+    Depends on vulnerable versions of @openzeppelin/contracts
+    node_modules/@chainlink/contracts
+  @offchainlabs/upgrade-executor  *
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  node_modules/@offchainlabs/upgrade-executor
+
+@openzeppelin/contracts-upgradeable  <=4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts-upgradeable
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts-upgradeable
+
+cookie  <0.7.0
+cookie accepts cookie name, path, and domain with out of bounds characters - https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+No fix available
+node_modules/cookie
+  @sentry/node  4.0.0-beta.0 - 7.74.2-alpha.1
+  Depends on vulnerable versions of cookie
+  node_modules/@sentry/node
+    hardhat  0.1.0-rc.0 - 3.0.0-next.32
+    Depends on vulnerable versions of @sentry/node
+    Depends on vulnerable versions of solc
+    node_modules/hardhat
+      @nomicfoundation/hardhat-chai-matchers  *
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-chai-matchers
+      @nomicfoundation/hardhat-ethers  <=3.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ethers
+        @nomicfoundation/hardhat-toolbox  *
+        Depends on vulnerable versions of @nomicfoundation/hardhat-chai-matchers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ignition-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-network-helpers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+        Depends on vulnerable versions of @typechain/hardhat
+        Depends on vulnerable versions of hardhat
+        Depends on vulnerable versions of hardhat-gas-reporter
+        Depends on vulnerable versions of solidity-coverage
+        node_modules/@nomicfoundation/hardhat-toolbox
+      @nomicfoundation/hardhat-ignition  <=0.15.16
+      Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition
+      @nomicfoundation/hardhat-ignition-ethers  <=0.15.17
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ignition
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition-ethers
+      @nomicfoundation/hardhat-network-helpers  <=1.1.2
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-network-helpers
+      @nomicfoundation/hardhat-verify  <=2.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-verify
+      @typechain/hardhat  *
+      Depends on vulnerable versions of hardhat
+      node_modules/@typechain/hardhat
+      hardhat-gas-reporter  *
+      Depends on vulnerable versions of hardhat
+      node_modules/hardhat-gas-reporter
+      solidity-coverage  >=0.8.0-beta.0
+      Depends on vulnerable versions of hardhat
+      node_modules/solidity-coverage
+
+tmp  <=0.2.3
+tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter - https://github.com/advisories/GHSA-52f5-9888-hmc6
+No fix available
+node_modules/tmp
+  patch-package  <=8.0.0 || >=8.1.0-canary
+  Depends on vulnerable versions of tmp
+  node_modules/patch-package
+  solc  >=0.5.1
+  Depends on vulnerable versions of tmp
+  node_modules/solc
+
+21 vulnerabilities (16 low, 3 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+PS D:\structured-lending-protocol-clean> npm audit fix --force
+npm warn using --force Recommended protections disabled.
+npm warn audit No fix available for hardhat@0.1.0-rc.0 - 3.0.0-next.32
+npm warn audit No fix available for @nomicfoundation/hardhat-toolbox@*
+
+up to date, audited 715 packages in 3s
+
+142 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+@openzeppelin/contracts  3.2.0 - 4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts
+node_modules/@openzeppelin/contracts-4.7.3
+node_modules/@openzeppelin/contracts-4.8.3
+  @arbitrum/nitro-contracts  *
+  Depends on vulnerable versions of @offchainlabs/upgrade-executor
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  Depends on vulnerable versions of patch-package
+  node_modules/@arbitrum/nitro-contracts
+    @chainlink/contracts  >=1.0.0-beta.0
+    Depends on vulnerable versions of @arbitrum/nitro-contracts
+    Depends on vulnerable versions of @openzeppelin/contracts
+    node_modules/@chainlink/contracts
+  @offchainlabs/upgrade-executor  *
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  node_modules/@offchainlabs/upgrade-executor
+
+@openzeppelin/contracts-upgradeable  <=4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts-upgradeable
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts-upgradeable
+
+cookie  <0.7.0
+cookie accepts cookie name, path, and domain with out of bounds characters - https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+No fix available
+node_modules/cookie
+  @sentry/node  4.0.0-beta.0 - 7.74.2-alpha.1
+  Depends on vulnerable versions of cookie
+  node_modules/@sentry/node
+    hardhat  0.1.0-rc.0 - 3.0.0-next.32
+    Depends on vulnerable versions of @sentry/node
+    Depends on vulnerable versions of solc
+    node_modules/hardhat
+      @nomicfoundation/hardhat-chai-matchers  *
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-chai-matchers
+      @nomicfoundation/hardhat-ethers  <=3.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ethers
+        @nomicfoundation/hardhat-toolbox  *
+        Depends on vulnerable versions of @nomicfoundation/hardhat-chai-matchers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ignition-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-network-helpers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+        Depends on vulnerable versions of @typechain/hardhat
+        Depends on vulnerable versions of hardhat
+        Depends on vulnerable versions of hardhat-gas-reporter
+        Depends on vulnerable versions of solidity-coverage
+        node_modules/@nomicfoundation/hardhat-toolbox
+      @nomicfoundation/hardhat-ignition  <=0.15.16
+      Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition
+      @nomicfoundation/hardhat-ignition-ethers  <=0.15.17
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ignition
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition-ethers
+      @nomicfoundation/hardhat-network-helpers  <=1.1.2
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-network-helpers
+      @nomicfoundation/hardhat-verify  <=2.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-verify
+      @typechain/hardhat  *
+      Depends on vulnerable versions of hardhat
+      node_modules/@typechain/hardhat
+      hardhat-gas-reporter  *
+      Depends on vulnerable versions of hardhat
+      node_modules/hardhat-gas-reporter
+      solidity-coverage  >=0.8.0-beta.0
+      Depends on vulnerable versions of hardhat
+      node_modules/solidity-coverage
+
+tmp  <=0.2.3
+tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter - https://github.com/advisories/GHSA-52f5-9888-hmc6
+No fix available
+node_modules/tmp
+  patch-package  <=8.0.0 || >=8.1.0-canary
+  Depends on vulnerable versions of tmp
+  node_modules/patch-package
+  solc  >=0.5.1
+  Depends on vulnerable versions of tmp
+  node_modules/solc
+
+21 vulnerabilities (16 low, 3 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+PS D:\structured-lending-protocol-clean> npm audit
+# npm audit report
+
+@openzeppelin/contracts  3.2.0 - 4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts
+node_modules/@openzeppelin/contracts-4.7.3
+node_modules/@openzeppelin/contracts-4.8.3
+  @arbitrum/nitro-contracts  *
+  Depends on vulnerable versions of @offchainlabs/upgrade-executor
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  Depends on vulnerable versions of patch-package
+  node_modules/@arbitrum/nitro-contracts
+    @chainlink/contracts  >=1.0.0-beta.0
+    Depends on vulnerable versions of @arbitrum/nitro-contracts
+    Depends on vulnerable versions of @openzeppelin/contracts
+    node_modules/@chainlink/contracts
+  @offchainlabs/upgrade-executor  *
+  Depends on vulnerable versions of @openzeppelin/contracts
+  Depends on vulnerable versions of @openzeppelin/contracts-upgradeable
+  node_modules/@offchainlabs/upgrade-executor
+
+@openzeppelin/contracts-upgradeable  <=4.9.5
+Severity: high
+GovernorCompatibilityBravo may trim proposal calldata - https://github.com/advisories/GHSA-93hq-5wgc-jc82
+OpenZeppelin Contracts vulnerable to Improper Escaping of Output - https://github.com/advisories/GHSA-g4vp-m682-qqmp
+OpenZeppelin Contracts using MerkleProof multiproofs may allow proving arbitrary leaves for specific trees - https://github.com/advisories/GHSA-wprv-93r4-jj2p
+OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated - https://github.com/advisories/GHSA-mx2q-35m2-x2rh
+OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning - https://github.com/advisories/GHSA-5h3x-9wvq-w4m2
+OpenZeppelin Contracts base64 encoding may read from potentially dirty memory - https://github.com/advisories/GHSA-9vx6-7xxf-x967
+fix available via `npm audit fix`
+node_modules/@arbitrum/nitro-contracts/node_modules/@openzeppelin/contracts-upgradeable
+node_modules/@offchainlabs/upgrade-executor/node_modules/@openzeppelin/contracts-upgradeable
+
+cookie  <0.7.0
+cookie accepts cookie name, path, and domain with out of bounds characters - https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+No fix available
+node_modules/cookie
+  @sentry/node  4.0.0-beta.0 - 7.74.2-alpha.1
+  Depends on vulnerable versions of cookie
+  node_modules/@sentry/node
+    hardhat  0.1.0-rc.0 - 3.0.0-next.32
+    Depends on vulnerable versions of @sentry/node
+    Depends on vulnerable versions of solc
+    node_modules/hardhat
+      @nomicfoundation/hardhat-chai-matchers  *
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-chai-matchers
+      @nomicfoundation/hardhat-ethers  <=3.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ethers
+        @nomicfoundation/hardhat-toolbox  *
+        Depends on vulnerable versions of @nomicfoundation/hardhat-chai-matchers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-ignition-ethers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-network-helpers
+        Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+        Depends on vulnerable versions of @typechain/hardhat
+        Depends on vulnerable versions of hardhat
+        Depends on vulnerable versions of hardhat-gas-reporter
+        Depends on vulnerable versions of solidity-coverage
+        node_modules/@nomicfoundation/hardhat-toolbox
+      @nomicfoundation/hardhat-ignition  <=0.15.16
+      Depends on vulnerable versions of @nomicfoundation/hardhat-verify
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition
+      @nomicfoundation/hardhat-ignition-ethers  <=0.15.17
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ethers
+      Depends on vulnerable versions of @nomicfoundation/hardhat-ignition
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-ignition-ethers
+      @nomicfoundation/hardhat-network-helpers  <=1.1.2
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-network-helpers
+      @nomicfoundation/hardhat-verify  <=2.1.3
+      Depends on vulnerable versions of hardhat
+      node_modules/@nomicfoundation/hardhat-verify
+      @typechain/hardhat  *
+      Depends on vulnerable versions of hardhat
+      node_modules/@typechain/hardhat
+      hardhat-gas-reporter  *
+      Depends on vulnerable versions of hardhat
+      node_modules/hardhat-gas-reporter
+      solidity-coverage  >=0.8.0-beta.0
+      Depends on vulnerable versions of hardhat
+      node_modules/solidity-coverage
+
+tmp  <=0.2.3
+tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter - https://github.com/advisories/GHSA-52f5-9888-hmc6
+No fix available
+node_modules/tmp
+  patch-package  <=8.0.0 || >=8.1.0-canary
+  Depends on vulnerable versions of tmp
+  node_modules/patch-package
+  solc  >=0.5.1
+  Depends on vulnerable versions of tmp
+  node_modules/solc
+
+21 vulnerabilities (16 low, 3 moderate, 2 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+PS D:\structured-lending-protocol-clean>
+PS D:\structured-lending-protocol-clean>
+PS D:\structured-lending-protocol-clean> .\SCRIPT_CORRIGE_POUR_LINSTALLATION_LOCAL.bat
+Page de codes active : 65001
+========================================
+  FINAL COMPILATION FIX
+========================================
+
+Step 1: Checking Hardhat installation...
+Hardhat is installed locally.
+
+Step 2: Opening LoanNFT.sol for manual edit...
+Please delete the SECOND supportsInterface function (around line 429)
+
+Step 3: Checking LoanNFT inheritance...
+If contract doesn't inherit from ERC721, change to:
+  Option A: Add ERC721 to inheritance
+  Option B: Simplify to ERC721URIStorage, AccessControl only
+
+Step 4: Checking GovernanceDAO.sol...
+Verify line 521 calls _executeOperations not _execute
+
+Step 5: Compiling with local installation...
+
+ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
+ --> contracts/governance/GovernanceDAO.sol:1:1:
+  |
+1 | ﻿// SPDX-License-Identifier: MIT
+  | ^
+
+
+Error HH600: Compilation failed
+
+HardhatError: HH600: Compilation failed
+    at SimpleTaskDefinition.action (D:\structured-lending-protocol-clean\node_modules\hardhat\src\builtin-tasks\compile.ts:504:15)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at Environment._runTaskDefinition (D:\structured-lending-protocol-clean\node_modules\hardhat\src\internal\core\runtime-environment.ts:351:14)
+    at OverriddenTaskDefinition._action (D:\structured-lending-protocol-clean\node_modules\@typechain\hardhat\src\index.ts:28:30)
+    at Environment._runTaskDefinition (D:\structured-lending-protocol-clean\node_modules\hardhat\src\internal\core\runtime-environment.ts:351:14)
+    at Environment.run (D:\structured-lending-protocol-clean\node_modules\hardhat\src\internal\core\runtime-environment.ts:184:14)
+    at SimpleTaskDefinition.action (D:\structured-lending-protocol-clean\node_modules\hardhat\src\builtin-tasks\compile.ts:1433:63)
+    at Environment._runTaskDefinition (D:\structured-lending-protocol-clean\node_modules\hardhat\src\internal\core\runtime-environment.ts:351:14)
+    at Environment.run (D:\structured-lending-protocol-clean\node_modules\hardhat\src\internal\core\runtime-environment.ts:184:14)
+    at SimpleTaskDefinition.action (D:\structured-lending-protocol-clean\node_modules\hardhat\src\builtin-tasks\compile.ts:1513:7)
+
+========================================
+  COMPILATION FAILED
+========================================
+
+Create new share file to see remaining errors:
+1. Run: .\Final-Share.bat
+2. Choose option 1 (CREATE FULL SHARE
+3. Share the new pastebin link
+========================================
+  COMPILATION SUCCESSFUL!
+========================================
+
+All errors fixed! You can now deploy your contracts.
+
+Appuyez sur une touche pour continuer...

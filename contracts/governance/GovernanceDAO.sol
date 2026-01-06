@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+﻿// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -40,11 +40,11 @@ contract GovernanceDAO is
         string ipfsMetadata;
     }
     
-    // Catégories de propositions
+    // CatÃ©gories de propositions
     enum ProposalCategory {
-        PARAMETER_CHANGE,     // Changement de paramètres
-        TREASURY_MANAGEMENT,  // Gestion de trésorerie
-        CONTRACT_UPGRADE,     // Mise à jour de contrat
+        PARAMETER_CHANGE,     // Changement de paramÃ¨tres
+        TREASURY_MANAGEMENT,  // Gestion de trÃ©sorerie
+        CONTRACT_UPGRADE,     // Mise Ã  jour de contrat
         EMERGENCY_ACTION,     // Action d'urgence
         COMMUNITY_GRANT,      // Subvention communautaire
         RISK_MANAGEMENT,      // Gestion des risques
@@ -52,7 +52,7 @@ contract GovernanceDAO is
         FEE_STRUCTURE         // Structure de frais
     }
     
-    // Statuts étendus
+    // Statuts Ã©tendus
     enum ProposalStatus {
         PENDING,
         ACTIVE,
@@ -64,14 +64,14 @@ contract GovernanceDAO is
         EXPIRED
     }
     
-    // Structures de délégation
+    // Structures de dÃ©lÃ©gation
     struct Delegation {
         address delegatee;
         uint256 amount;
         uint256 timestamp;
     }
     
-    // Variables d'état
+    // Variables d'Ã©tat
     mapping(uint256 => EnhancedProposal) public enhancedProposals;
     mapping(address => Delegation[]) public delegationHistory;
     mapping(address => uint256) public reputationScores;
@@ -80,10 +80,10 @@ contract GovernanceDAO is
     uint256 public minimumReputation = 100;
     uint256 public proposalDeposit = 100 * 1e18; // 100 tokens
     
-    // Token de réputation
+    // Token de rÃ©putation
     ReputationToken public reputationToken;
     
-    // Événements
+    // Ã‰vÃ©nements
     event ProposalCreated(
         uint256 indexed proposalId,
         address indexed proposer,
@@ -129,7 +129,7 @@ contract GovernanceDAO is
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
     
-    // Création de proposition améliorée
+    // CrÃ©ation de proposition amÃ©liorÃ©e
     function proposeEnhanced(
         address[] memory targets,
         uint256[] memory values,
@@ -144,17 +144,17 @@ contract GovernanceDAO is
             "Insufficient reputation"
         );
         
-        // Dépôt de garantie
+        // DÃ©pÃ´t de garantie
         IERC20 governanceToken = IERC20(address(token()));
         require(
             governanceToken.transferFrom(msg.sender, address(this), proposalDeposit),
             "Deposit failed"
         );
         
-        // Création de la proposition
+        // CrÃ©ation de la proposition
         uint256 proposalId = propose(targets, values, calldatas, description);
         
-        // Enregistrement des métadonnées enrichies
+        // Enregistrement des mÃ©tadonnÃ©es enrichies
         enhancedProposals[proposalId] = EnhancedProposal({
             proposalId: proposalId,
             proposer: msg.sender,
@@ -175,8 +175,8 @@ contract GovernanceDAO is
         
         proposalCount++;
         
-        // Attribution de réputation pour la création de proposition
-        reputationToken.mint(msg.sender, 10); // 10 points de réputation
+        // Attribution de rÃ©putation pour la crÃ©ation de proposition
+        reputationToken.mint(msg.sender, 10); // 10 points de rÃ©putation
         
         emit ProposalCreated(proposalId, msg.sender, title, category, block.timestamp);
         emit ReputationAwarded(msg.sender, 10, "Proposal creation", block.timestamp);
@@ -184,24 +184,24 @@ contract GovernanceDAO is
         return proposalId;
     }
     
-    // Vote avec poids de réputation
+    // Vote avec poids de rÃ©putation
     function castVoteWithReasonAndReputation(
         uint256 proposalId,
         uint8 support,
         string memory reason
     ) public returns (uint256) {
-        // Vérifier que la proposition est active
+        // VÃ©rifier que la proposition est active
         require(state(proposalId) == ProposalState.Active, "Voting not active");
         
-        // Calcul du poids du vote (tokens + réputation)
+        // Calcul du poids du vote (tokens + rÃ©putation)
         uint256 tokenWeight = getVotes(msg.sender, proposalId);
         uint256 reputationWeight = reputationToken.balanceOf(msg.sender);
-        uint256 totalWeight = tokenWeight + (reputationWeight / 10); // Réputation compte pour 1/10
+        uint256 totalWeight = tokenWeight + (reputationWeight / 10); // RÃ©putation compte pour 1/10
         
         // Enregistrement du vote
         _castVote(proposalId, msg.sender, support, reason);
         
-        // Mise à jour des compteurs dans enhancedProposals
+        // Mise Ã  jour des compteurs dans enhancedProposals
         EnhancedProposal storage proposal = enhancedProposals[proposalId];
         if (support == 0) {
             proposal.againstVotes += totalWeight;
@@ -211,7 +211,7 @@ contract GovernanceDAO is
             proposal.abstainVotes += totalWeight;
         }
         
-        // Attribution de réputation pour la participation
+        // Attribution de rÃ©putation pour la participation
         reputationToken.mint(msg.sender, 1);
         
         emit VoteCast(
@@ -228,7 +228,7 @@ contract GovernanceDAO is
         return totalWeight;
     }
     
-    // Exécution de proposition
+    // ExÃ©cution de proposition
     function executeEnhanced(
         address[] memory targets,
         uint256[] memory values,
@@ -237,22 +237,22 @@ contract GovernanceDAO is
     ) public payable returns (uint256) {
         uint256 proposalId = hashProposal(targets, values, calldatas, descriptionHash);
         
-        // Vérifier que la proposition a réussie
+        // VÃ©rifier que la proposition a rÃ©ussie
         require(state(proposalId) == ProposalState.Succeeded, "Proposal not succeeded");
         
-        // Exécution
+        // ExÃ©cution
         _execute(proposalId, targets, values, calldatas, descriptionHash);
         
-        // Mise à jour du statut
+        // Mise Ã  jour du statut
         EnhancedProposal storage proposal = enhancedProposals[proposalId];
         proposal.status = ProposalStatus.EXECUTED;
         proposal.executionTime = block.timestamp;
         
-        // Remboursement du dépôt au proposant
+        // Remboursement du dÃ©pÃ´t au proposant
         IERC20 governanceToken = IERC20(address(token()));
         governanceToken.transfer(proposal.proposer, proposalDeposit);
         
-        // Attribution de réputation supplémentaire pour l'exécution réussie
+        // Attribution de rÃ©putation supplÃ©mentaire pour l'exÃ©cution rÃ©ussie
         reputationToken.mint(proposal.proposer, 50);
         
         emit ProposalExecuted(proposalId, msg.sender, block.timestamp);
@@ -261,11 +261,11 @@ contract GovernanceDAO is
         return proposalId;
     }
     
-    // Délégation de votes avec historique
+    // DÃ©lÃ©gation de votes avec historique
     function delegateWithRecord(address delegatee) public {
         uint256 currentVotes = getVotes(msg.sender, block.number);
         
-        // Délégation standard
+        // DÃ©lÃ©gation standard
         reputationToken.delegate(delegatee);
         
         // Enregistrement historique
@@ -275,12 +275,12 @@ contract GovernanceDAO is
             timestamp: block.timestamp
         }));
         
-        // Attribution de réputation pour la délégation
+        // Attribution de rÃ©putation pour la dÃ©lÃ©gation
         reputationToken.mint(msg.sender, 2);
         emit ReputationAwarded(msg.sender, 2, "Vote delegation", block.timestamp);
     }
     
-    // Création de proposition rapide pour les paramètres
+    // CrÃ©ation de proposition rapide pour les paramÃ¨tres
     function proposeParameterChange(
         address targetContract,
         string memory functionSignature,
@@ -327,7 +327,7 @@ contract GovernanceDAO is
         );
         
         address[] memory targets = new address[](1);
-        targets[0] = address(token()); // Trésorerie en tokens de gouvernance
+        targets[0] = address(token()); // TrÃ©sorerie en tokens de gouvernance
         
         uint256[] memory values = new uint256[](1);
         values[0] = 0;
@@ -431,7 +431,7 @@ contract GovernanceDAO is
         return tokenPower + reputationPower;
     }
     
-    // Configuration des paramètres
+    // Configuration des paramÃ¨tres
     function setMinimumReputation(uint256 newMinimum) external onlyRole(DEFAULT_ADMIN_ROLE) {
         minimumReputation = newMinimum;
     }
@@ -476,19 +476,19 @@ contract GovernanceDAO is
         return string(str);
     }
     
-    // Overrides nécessaires
-    function votingDelay() public view override(GovernorSettings) returns (uint256) {
+    // Overrides nÃ©cessaires
+    function votingDelay() public view override(Governor, GovernorSettings) returns (uint256) {
         return super.votingDelay();
     }
     
-    function votingPeriod() public view override(GovernorSettings) returns (uint256) {
+    function votingPeriod() public view override(Governor, GovernorSettings) returns (uint256) {
         return super.votingPeriod();
     }
     
     function quorum(uint256 blockNumber) 
         public 
         view 
-        override(GovernorVotesQuorumFraction) 
+        override(Governor, GovernorVotesQuorumFraction) 
         returns (uint256) 
     {
         return super.quorum(blockNumber);
@@ -497,7 +497,7 @@ contract GovernanceDAO is
     function state(uint256 proposalId) 
         public 
         view 
-        override(GovernorTimelockControl) 
+        override(Governor, GovernorTimelockControl) 
         returns (ProposalState) 
     {
         return super.state(proposalId);
@@ -506,7 +506,7 @@ contract GovernanceDAO is
     function proposalThreshold() 
         public 
         view 
-        override(GovernorSettings) 
+        override(Governor, GovernorSettings) 
         returns (uint256) 
     {
         return super.proposalThreshold();
@@ -518,7 +518,7 @@ contract GovernanceDAO is
         uint256[] memory values,
         bytes[] memory calldatas,
         bytes32 descriptionHash
-    ) internal override(GovernorTimelockControl) {
+    ) internal override(Governor, GovernorTimelockControl) {
         super._executeOperations(proposalId, targets, values, calldatas, descriptionHash);
     }
     
@@ -527,29 +527,29 @@ contract GovernanceDAO is
         uint256[] memory values,
         bytes[] memory calldatas,
         bytes32 descriptionHash
-    ) internal override(GovernorTimelockControl) returns (uint256) {
+    ) internal override(Governor, GovernorTimelockControl) returns (uint256) {
         return super._cancel(targets, values, calldatas, descriptionHash);
     }
     
-    function _executor() internal view override(GovernorTimelockControl) returns (address) {
+    function _executor() internal view override(Governor, GovernorTimelockControl) returns (address) {
         return super._executor();
     }
     
     function supportsInterface(bytes4 interfaceId)
         public
         view
-        override(AccessControl)
+        override(Governor, AccessControl)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
     }
 	function _executeOperations(uint256 proposalId, address[] memory targets, uint256[] memory values, bytes[] memory calldatas, bytes32 descriptionHash) 
-		internal override(GovernorTimelockControl) {
+		internal override(Governor, GovernorTimelockControl) {
 		super._executeOperations(proposalId, targets, values, calldatas, descriptionHash);
 	}
 
 	function _queueOperations(uint256 proposalId, address[] memory targets, uint256[] memory values, bytes[] memory calldatas, bytes32 descriptionHash) 
-		internal override(GovernorTimelockControl) returns (uint48) {
+		internal override(Governor, GovernorTimelockControl) returns (uint48) {
 		return super._queueOperations(proposalId, targets, values, calldatas, descriptionHash);
 	}
 

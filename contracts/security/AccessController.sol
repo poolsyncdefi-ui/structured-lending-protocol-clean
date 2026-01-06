@@ -317,13 +317,13 @@ contract AccessController is AccessControl {
         
         // Attribution du rôle
         _grantRole(role, account);
-		roleMembers[role].push(account);
+		roleMembers[role].add(account);
         
         // Mettre à jour les rôles de l'utilisateur
-        userRoles[account].push(role);
+        userRoles[account].add(role);
         
         // Enregistrer le log
-        permissionLogs[account].push(PermissionLog({
+        permissionLogs[account].add(PermissionLog({
             user: account,
             role: role,
             granted: true,
@@ -367,7 +367,7 @@ contract AccessController is AccessControl {
         _removeUserRole(account, role);
         
         // Enregistrer le log
-        permissionLogs[account].push(PermissionLog({
+        permissionLogs[account].add(PermissionLog({
             user: account,
             role: role,
             granted: false,
@@ -399,7 +399,7 @@ contract AccessController is AccessControl {
             ipfsConfig: ipfsConfig
         });
         
-        registeredContractsSet.push(contractAddress);
+        registeredContractsSet.add(contractAddress);
         
         emit ContractRegistered(contractAddress, name, version, msg.sender, block.timestamp);
     }
@@ -464,7 +464,7 @@ contract AccessController is AccessControl {
         
         // Attribution à l'exécuteur
         _grantRole(emergencyRole, msg.sender);
-        roleMembers[emergencyRole].push(msg.sender);
+        roleMembers[emergencyRole].add(msg.sender);
         
         // Programmer la révocation automatique
         _scheduleRoleRevocation(emergencyRole, msg.sender, block.timestamp + duration);
@@ -623,10 +623,10 @@ contract AccessController is AccessControl {
         }
         
         super.grantRole(role, account);
-        roleMembers[role].push(account);
+        roleMembers[role].add(account);
         
         if (!_hasRoleInArray(userRoles[account], role)) {
-            userRoles[account].push(role);
+            userRoles[account].add(role);
         }
     }
     
@@ -650,3 +650,4 @@ contract AccessController is AccessControl {
             "Full system access", 3, 1, true);
     }
 }
+

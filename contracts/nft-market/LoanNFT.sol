@@ -425,15 +425,7 @@ contract LoanNFT is ERC721, ERC721Enumerable, ERC721URIStorage, AccessControl {
     {
         return super.uri(tokenId);
     }
-    
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721Enumerable, ERC721URIStorage, AccessControl)
-        returns (bool)
-    {
-        return super.supportsInterface(interfaceId);
-    }
+
     
     // Fonction utilitaire pour convertir uint en string
     function _toString(uint256 value) internal pure returns (string memory) {

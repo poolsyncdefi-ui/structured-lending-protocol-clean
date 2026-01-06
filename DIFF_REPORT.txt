@@ -1,0 +1,55 @@
+============================================================================== 
+STRUCTURED LENDING PROTOCOL - DIFF REPORT 
+============================================================================== 
+Date: 06/01/2026 Time: 19:40:49,79 
+ 
+[GIT STATUS] 
+------------------------------------------------------------------------------ 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   PROJECT_SHARE.txt
+	modified:   contracts/governance/GovernanceDAO.sol
+	modified:   contracts/governance/ReputationToken.sol
+	modified:   contracts/nft-market/LoanNFT.sol
+	modified:   contracts/security/AccessController.sol
+	modified:   package.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Convert
+	DIFF_REPORT.txt
+	Old/
+	stdout.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ 
+[CHANGED FILES DETAIL] 
+============================================================================== 
+No changes detected in the working directory. 
+ 
+ 
+[GIT DIFF SUMMARY] 
+============================================================================== 
+ PROJECT_SHARE.txt                        |  6 +-
+ contracts/governance/GovernanceDAO.sol   | 94 ++++++++++++++++----------------
+ contracts/governance/ReputationToken.sol |  2 +-
+ contracts/nft-market/LoanNFT.sol         | 12 +---
+ contracts/security/AccessController.sol  | 19 ++++---
+ package.json                             |  4 +-
+ 6 files changed, 65 insertions(+), 72 deletions(-)
+ 
+[REPORT SUMMARY] 
+============================================================================== 
+Total changed files: 0 
+Report generated: 06/01/2026 19:40:50,08 
+ 
+INSTRUCTIONS FOR CODE REVIEW: 
+1. Files are listed with full paths for precise location 
+2. Line numbers are included for specific references 
+3. Changes marked with + (additions) and - (deletions) 
+4. New files show complete content 
+============================================================================== 
