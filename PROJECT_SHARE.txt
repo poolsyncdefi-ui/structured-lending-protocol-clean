@@ -3,12 +3,12 @@ STRUCTURED LENDING PROTOCOL - FULL PROJECT SHARE
 ============================================================================== 
 GitHub: poolsyncdefi-ui/structured-lending-protocol-clean 
 Repo URL: https://github.com/poolsyncdefi-ui/structured-lending-protocol-clean 
-Date: 06/01/2026 Time: 18:22:41,41 
+Date: 06/01/2026 Time: 20:02:28,41 
  
 [GIT INFORMATION] 
 ------------------------------------------------------------------------------ 
 Branch: main 
-Commit: 50cefe3 
+Commit: 60d674d 
  
 [CONTRACTS DIRECTORY - *.sol files] 
 ============================================================================== 
@@ -1649,7 +1649,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 FILE 0 | !filepath! 
 Size: !filesize! bytes | Modified: !filemodified! 
 ------------------------------------------------------------------------------ 
-1: // SPDX-License-Identifier: MIT 
+1: ﻿// SPDX-License-Identifier: MIT 
 2: pragma solidity 0.8.24; 
 3: import "@openzeppelin/contracts/token/ERC20/IERC20.sol"; 
 4: import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol"; 
@@ -1689,11 +1689,11 @@ Size: !filesize! bytes | Modified: !filemodified!
 38:         string ipfsMetadata; 
 39:     } 
 40:      
-41:     // Catégories de propositions 
+41:     // CatÃ©gories de propositions 
 42:     enum ProposalCategory { 
-43:         PARAMETER_CHANGE,     // Changement de paramètres 
-44:         TREASURY_MANAGEMENT,  // Gestion de trésorerie 
-45:         CONTRACT_UPGRADE,     // Mise à jour de contrat 
+43:         PARAMETER_CHANGE,     // Changement de paramÃ¨tres 
+44:         TREASURY_MANAGEMENT,  // Gestion de trÃ©sorerie 
+45:         CONTRACT_UPGRADE,     // Mise Ã  jour de contrat 
 46:         EMERGENCY_ACTION,     // Action d'urgence 
 47:         COMMUNITY_GRANT,      // Subvention communautaire 
 48:         RISK_MANAGEMENT,      // Gestion des risques 
@@ -1701,7 +1701,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 50:         FEE_STRUCTURE         // Structure de frais 
 51:     } 
 52:      
-53:     // Statuts étendus 
+53:     // Statuts Ã©tendus 
 54:     enum ProposalStatus { 
 55:         PENDING, 
 56:         ACTIVE, 
@@ -1713,14 +1713,14 @@ Size: !filesize! bytes | Modified: !filemodified!
 62:         EXPIRED 
 63:     } 
 64:      
-65:     // Structures de délégation 
+65:     // Structures de dÃ©lÃ©gation 
 66:     struct Delegation { 
 67:         address delegatee; 
 68:         uint256 amount; 
 69:         uint256 timestamp; 
 70:     } 
 71:      
-72:     // Variables d'état 
+72:     // Variables d'Ã©tat 
 73:     mapping(uint256 => EnhancedProposal) public enhancedProposals; 
 74:     mapping(address => Delegation[]) public delegationHistory; 
 75:     mapping(address => uint256) public reputationScores; 
@@ -1729,10 +1729,10 @@ Size: !filesize! bytes | Modified: !filemodified!
 78:     uint256 public minimumReputation = 100; 
 79:     uint256 public proposalDeposit = 100 * 1e18; // 100 tokens 
 80:      
-81:     // Token de réputation 
+81:     // Token de rÃ©putation 
 82:     ReputationToken public reputationToken; 
 83:      
-84:     // Événements 
+84:     // Ã‰vÃ©nements 
 85:     event ProposalCreated( 
 86:         uint256 indexed proposalId, 
 87:         address indexed proposer, 
@@ -1778,7 +1778,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 127:         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); 
 128:     } 
 129:      
-130:     // Création de proposition améliorée 
+130:     // CrÃ©ation de proposition amÃ©liorÃ©e 
 131:     function proposeEnhanced( 
 132:         address[] memory targets, 
 133:         uint256[] memory values, 
@@ -1793,17 +1793,17 @@ Size: !filesize! bytes | Modified: !filemodified!
 142:             "Insufficient reputation" 
 143:         ); 
 144:          
-145:         // Dépôt de garantie 
+145:         // DÃ©pÃ´t de garantie 
 146:         IERC20 governanceToken = IERC20(address(token())); 
 147:         require( 
 148:             governanceToken.transferFrom(msg.sender, address(this), proposalDeposit), 
 149:             "Deposit failed" 
 150:         ); 
 151:          
-152:         // Création de la proposition 
+152:         // CrÃ©ation de la proposition 
 153:         uint256 proposalId = propose(targets, values, calldatas, description); 
 154:          
-155:         // Enregistrement des métadonnées enrichies 
+155:         // Enregistrement des mÃ©tadonnÃ©es enrichies 
 156:         enhancedProposals[proposalId] = EnhancedProposal({ 
 157:             proposalId: proposalId, 
 158:             proposer: msg.sender, 
@@ -1824,8 +1824,8 @@ Size: !filesize! bytes | Modified: !filemodified!
 173:          
 174:         proposalCount++; 
 175:          
-176:         // Attribution de réputation pour la création de proposition 
-177:         reputationToken.mint(msg.sender, 10); // 10 points de réputation 
+176:         // Attribution de rÃ©putation pour la crÃ©ation de proposition 
+177:         reputationToken.mint(msg.sender, 10); // 10 points de rÃ©putation 
 178:          
 179:         emit ProposalCreated(proposalId, msg.sender, title, category, block.timestamp); 
 180:         emit ReputationAwarded(msg.sender, 10, "Proposal creation", block.timestamp); 
@@ -1833,24 +1833,24 @@ Size: !filesize! bytes | Modified: !filemodified!
 182:         return proposalId; 
 183:     } 
 184:      
-185:     // Vote avec poids de réputation 
+185:     // Vote avec poids de rÃ©putation 
 186:     function castVoteWithReasonAndReputation( 
 187:         uint256 proposalId, 
 188:         uint8 support, 
 189:         string memory reason 
 190:     ) public returns (uint256) { 
-191:         // Vérifier que la proposition est active 
+191:         // VÃ©rifier que la proposition est active 
 192:         require(state(proposalId) == ProposalState.Active, "Voting not active"); 
 193:          
-194:         // Calcul du poids du vote (tokens + réputation) 
+194:         // Calcul du poids du vote (tokens + rÃ©putation) 
 195:         uint256 tokenWeight = getVotes(msg.sender, proposalId); 
 196:         uint256 reputationWeight = reputationToken.balanceOf(msg.sender); 
-197:         uint256 totalWeight = tokenWeight + (reputationWeight / 10); // Réputation compte pour 1/10 
+197:         uint256 totalWeight = tokenWeight + (reputationWeight / 10); // RÃ©putation compte pour 1/10 
 198:          
 199:         // Enregistrement du vote 
 200:         _castVote(proposalId, msg.sender, support, reason); 
 201:          
-202:         // Mise à jour des compteurs dans enhancedProposals 
+202:         // Mise Ã  jour des compteurs dans enhancedProposals 
 203:         EnhancedProposal storage proposal = enhancedProposals[proposalId]; 
 204:         if (support == 0) { 
 205:             proposal.againstVotes += totalWeight; 
@@ -1860,7 +1860,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 209:             proposal.abstainVotes += totalWeight; 
 210:         } 
 211:          
-212:         // Attribution de réputation pour la participation 
+212:         // Attribution de rÃ©putation pour la participation 
 213:         reputationToken.mint(msg.sender, 1); 
 214:          
 215:         emit VoteCast( 
@@ -1877,7 +1877,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 226:         return totalWeight; 
 227:     } 
 228:      
-229:     // Exécution de proposition 
+229:     // ExÃ©cution de proposition 
 230:     function executeEnhanced( 
 231:         address[] memory targets, 
 232:         uint256[] memory values, 
@@ -1886,22 +1886,22 @@ Size: !filesize! bytes | Modified: !filemodified!
 235:     ) public payable returns (uint256) { 
 236:         uint256 proposalId = hashProposal(targets, values, calldatas, descriptionHash); 
 237:          
-238:         // Vérifier que la proposition a réussie 
+238:         // VÃ©rifier que la proposition a rÃ©ussie 
 239:         require(state(proposalId) == ProposalState.Succeeded, "Proposal not succeeded"); 
 240:          
-241:         // Exécution 
+241:         // ExÃ©cution 
 242:         _execute(proposalId, targets, values, calldatas, descriptionHash); 
 243:          
-244:         // Mise à jour du statut 
+244:         // Mise Ã  jour du statut 
 245:         EnhancedProposal storage proposal = enhancedProposals[proposalId]; 
 246:         proposal.status = ProposalStatus.EXECUTED; 
 247:         proposal.executionTime = block.timestamp; 
 248:          
-249:         // Remboursement du dépôt au proposant 
+249:         // Remboursement du dÃ©pÃ´t au proposant 
 250:         IERC20 governanceToken = IERC20(address(token())); 
 251:         governanceToken.transfer(proposal.proposer, proposalDeposit); 
 252:          
-253:         // Attribution de réputation supplémentaire pour l'exécution réussie 
+253:         // Attribution de rÃ©putation supplÃ©mentaire pour l'exÃ©cution rÃ©ussie 
 254:         reputationToken.mint(proposal.proposer, 50); 
 255:          
 256:         emit ProposalExecuted(proposalId, msg.sender, block.timestamp); 
@@ -1910,11 +1910,11 @@ Size: !filesize! bytes | Modified: !filemodified!
 259:         return proposalId; 
 260:     } 
 261:      
-262:     // Délégation de votes avec historique 
+262:     // DÃ©lÃ©gation de votes avec historique 
 263:     function delegateWithRecord(address delegatee) public { 
 264:         uint256 currentVotes = getVotes(msg.sender, block.number); 
 265:          
-266:         // Délégation standard 
+266:         // DÃ©lÃ©gation standard 
 267:         reputationToken.delegate(delegatee); 
 268:          
 269:         // Enregistrement historique 
@@ -1924,12 +1924,12 @@ Size: !filesize! bytes | Modified: !filemodified!
 273:             timestamp: block.timestamp 
 274:         })); 
 275:          
-276:         // Attribution de réputation pour la délégation 
+276:         // Attribution de rÃ©putation pour la dÃ©lÃ©gation 
 277:         reputationToken.mint(msg.sender, 2); 
 278:         emit ReputationAwarded(msg.sender, 2, "Vote delegation", block.timestamp); 
 279:     } 
 280:      
-281:     // Création de proposition rapide pour les paramètres 
+281:     // CrÃ©ation de proposition rapide pour les paramÃ¨tres 
 282:     function proposeParameterChange( 
 283:         address targetContract, 
 284:         string memory functionSignature, 
@@ -1976,7 +1976,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 325:         ); 
 326:          
 327:         address[] memory targets = new address[](1); 
-328:         targets[0] = address(token()); // Trésorerie en tokens de gouvernance 
+328:         targets[0] = address(token()); // TrÃ©sorerie en tokens de gouvernance 
 329:          
 330:         uint256[] memory values = new uint256[](1); 
 331:         values[0] = 0; 
@@ -2080,7 +2080,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 429:         return tokenPower + reputationPower; 
 430:     } 
 431:      
-432:     // Configuration des paramètres 
+432:     // Configuration des paramÃ¨tres 
 433:     function setMinimumReputation(uint256 newMinimum) external onlyRole(DEFAULT_ADMIN_ROLE) { 
 434:         minimumReputation = newMinimum; 
 435:     } 
@@ -2125,19 +2125,19 @@ Size: !filesize! bytes | Modified: !filemodified!
 474:         return string(str); 
 475:     } 
 476:      
-477:     // Overrides nécessaires 
-478:     function votingDelay() public view override(GovernorSettings) returns (uint256) { 
+477:     // Overrides nÃ©cessaires 
+478:     function votingDelay() public view override(Governor, GovernorSettings) returns (uint256) { 
 479:         return super.votingDelay(); 
 480:     } 
 481:      
-482:     function votingPeriod() public view override(GovernorSettings) returns (uint256) { 
+482:     function votingPeriod() public view override(Governor, GovernorSettings) returns (uint256) { 
 483:         return super.votingPeriod(); 
 484:     } 
 485:      
 486:     function quorum(uint256 blockNumber)  
 487:         public  
 488:         view  
-489:         override(GovernorVotesQuorumFraction)  
+489:         override(Governor, GovernorVotesQuorumFraction)  
 490:         returns (uint256)  
 491:     { 
 492:         return super.quorum(blockNumber); 
@@ -2146,7 +2146,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 495:     function state(uint256 proposalId)  
 496:         public  
 497:         view  
-498:         override(GovernorTimelockControl)  
+498:         override(Governor, GovernorTimelockControl)  
 499:         returns (ProposalState)  
 500:     { 
 501:         return super.state(proposalId); 
@@ -2155,7 +2155,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 504:     function proposalThreshold()  
 505:         public  
 506:         view  
-507:         override(GovernorSettings)  
+507:         override(Governor, GovernorSettings)  
 508:         returns (uint256)  
 509:     { 
 510:         return super.proposalThreshold(); 
@@ -2167,7 +2167,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 516:         uint256[] memory values, 
 517:         bytes[] memory calldatas, 
 518:         bytes32 descriptionHash 
-519:     ) internal override(GovernorTimelockControl) { 
+519:     ) internal override(Governor, GovernorTimelockControl) { 
 520:         super._executeOperations(proposalId, targets, values, calldatas, descriptionHash); 
 521:     } 
 522:      
@@ -2176,28 +2176,28 @@ Size: !filesize! bytes | Modified: !filemodified!
 525:         uint256[] memory values, 
 526:         bytes[] memory calldatas, 
 527:         bytes32 descriptionHash 
-528:     ) internal override(GovernorTimelockControl) returns (uint256) { 
+528:     ) internal override(Governor, GovernorTimelockControl) returns (uint256) { 
 529:         return super._cancel(targets, values, calldatas, descriptionHash); 
 530:     } 
 531:      
-532:     function _executor() internal view override(GovernorTimelockControl) returns (address) { 
+532:     function _executor() internal view override(Governor, GovernorTimelockControl) returns (address) { 
 533:         return super._executor(); 
 534:     } 
 535:      
 536:     function supportsInterface(bytes4 interfaceId) 
 537:         public 
 538:         view 
-539:         override(AccessControl) 
+539:         override(Governor, AccessControl) 
 540:         returns (bool) 
 541:     { 
 542:         return super.supportsInterface(interfaceId); 
 543:     } 
 544: 	function _executeOperations(uint256 proposalId, address[] memory targets, uint256[] memory values, bytes[] memory calldatas, bytes32 descriptionHash)  
-545: 		internal override(GovernorTimelockControl) { 
+545: 		internal override(Governor, GovernorTimelockControl) { 
 546: 		super._executeOperations(proposalId, targets, values, calldatas, descriptionHash); 
 547: 	} 
 548: 	function _queueOperations(uint256 proposalId, address[] memory targets, uint256[] memory values, bytes[] memory calldatas, bytes32 descriptionHash)  
-549: 		internal override(GovernorTimelockControl) returns (uint48) { 
+549: 		internal override(Governor, GovernorTimelockControl) returns (uint48) { 
 550: 		return super._queueOperations(proposalId, targets, values, calldatas, descriptionHash); 
 551: 	} 
 552: 	function proposalNeedsQueuing(uint256 proposalId) public view override returns (bool) { 
@@ -5683,87 +5683,78 @@ Size: !filesize! bytes | Modified: !filemodified!
 419:         return super.uri(tokenId); 
 420:     } 
 421:      
-422:     function supportsInterface(bytes4 interfaceId) 
-423:         public 
-424:         view 
-425:         override(ERC721Enumerable, ERC721URIStorage, AccessControl) 
-426:         returns (bool) 
-427:     { 
-428:         return super.supportsInterface(interfaceId); 
-429:     } 
-430:      
-431:     // Fonction utilitaire pour convertir uint en string 
-432:     function _toString(uint256 value) internal pure returns (string memory) { 
-433:         if (value == 0) { 
-434:             return "0"; 
-435:         } 
-436:         uint256 temp = value; 
-437:         uint256 digits; 
-438:         while (temp = 0) { 
-439:             digits++; 
-440:             temp /= 10; 
-441:         } 
-442:         bytes memory buffer = new bytes(digits); 
-443:         while (value = 0) { 
-444:             digits -= 1; 
-445:             buffer[digits] = bytes1(uint8(48 + uint256(value % 10))); 
-446:             value /= 10; 
-447:         } 
-448:         return string(buffer); 
+422:     // Fonction utilitaire pour convertir uint en string 
+423:     function _toString(uint256 value) internal pure returns (string memory) { 
+424:         if (value == 0) { 
+425:             return "0"; 
+426:         } 
+427:         uint256 temp = value; 
+428:         uint256 digits; 
+429:         while (temp = 0) { 
+430:             digits++; 
+431:             temp /= 10; 
+432:         } 
+433:         bytes memory buffer = new bytes(digits); 
+434:         while (value = 0) { 
+435:             digits -= 1; 
+436:             buffer[digits] = bytes1(uint8(48 + uint256(value % 10))); 
+437:             value /= 10; 
+438:         } 
+439:         return string(buffer); 
+440:     } 
+441:      
+442:     // Getters 
+443:     function getTokenId(uint256 loanId) external view returns (uint256) { 
+444:         return loanIdToTokenId[loanId]; 
+445:     } 
+446:      
+447:     function getLoanId(uint256 tokenId) external view returns (uint256) { 
+448:         return tokenIdToLoanId[tokenId]; 
 449:     } 
 450:      
-451:     // Getters 
-452:     function getTokenId(uint256 loanId) external view returns (uint256) { 
-453:         return loanIdToTokenId[loanId]; 
-454:     } 
-455:      
-456:     function getLoanId(uint256 tokenId) external view returns (uint256) { 
-457:         return tokenIdToLoanId[tokenId]; 
-458:     } 
-459:      
-460:     function getBorrowerTokens(address borrower) external view returns (uint256[] memory) { 
-461:         uint256 balance = balanceOf(borrower); 
-462:         uint256[] memory tokens = new uint256[](balance); 
-463:          
-464:         for (uint256 i = 0; i < balance; i++) { 
-465:             tokens[i] = tokenOfOwnerByIndex(borrower, i); 
-466:         } 
-467:          
-468:         return tokens; 
-469:     } 
-470:      
-471:     function getTokenIdsByStatus(LoanStatus status) external view returns (uint256[] memory) { 
-472:         uint256 total = _tokenIds.current(); 
-473:         uint256 count = 0; 
-474:          
-475:         // Compter les tokens avec le statut donné 
-476:         for (uint256 i = 1; i <= total; i++) { 
-477:             if (loanMetadata[i].status == status) { 
-478:                 count++; 
-479:             } 
-480:         } 
-481:          
-482:         // Collecter les tokenIds 
-483:         uint256[] memory result = new uint256[](count); 
-484:         uint256 index = 0; 
-485:          
-486:         for (uint256 i = 1; i <= total; i++) { 
-487:             if (loanMetadata[i].status == status) { 
-488:                 result[index] = i; 
-489:                 index++; 
-490:             } 
-491:         } 
-492:          
-493:         return result; 
-494:     } 
-495: 	 
-496: 	function _increaseBalance(address account, uint128 value)  
-497: 		internal  
-498: 		override(ERC721, ERC721Enumerable)  
-499: 	{ 
-500: 		super._increaseBalance(account, value); 
-501: 	} 
-502: } 
+451:     function getBorrowerTokens(address borrower) external view returns (uint256[] memory) { 
+452:         uint256 balance = balanceOf(borrower); 
+453:         uint256[] memory tokens = new uint256[](balance); 
+454:          
+455:         for (uint256 i = 0; i < balance; i++) { 
+456:             tokens[i] = tokenOfOwnerByIndex(borrower, i); 
+457:         } 
+458:          
+459:         return tokens; 
+460:     } 
+461:      
+462:     function getTokenIdsByStatus(LoanStatus status) external view returns (uint256[] memory) { 
+463:         uint256 total = _tokenIds.current(); 
+464:         uint256 count = 0; 
+465:          
+466:         // Compter les tokens avec le statut donné 
+467:         for (uint256 i = 1; i <= total; i++) { 
+468:             if (loanMetadata[i].status == status) { 
+469:                 count++; 
+470:             } 
+471:         } 
+472:          
+473:         // Collecter les tokenIds 
+474:         uint256[] memory result = new uint256[](count); 
+475:         uint256 index = 0; 
+476:          
+477:         for (uint256 i = 1; i <= total; i++) { 
+478:             if (loanMetadata[i].status == status) { 
+479:                 result[index] = i; 
+480:                 index++; 
+481:             } 
+482:         } 
+483:          
+484:         return result; 
+485:     } 
+486: 	 
+487: 	function _increaseBalance(address account, uint128 value)  
+488: 		internal  
+489: 		override(ERC721, ERC721Enumerable)  
+490: 	{ 
+491: 		super._increaseBalance(account, value); 
+492: 	} 
+493: } 
 ------------------------------------------------------------------------------ 
  
 FILE 0 | !filepath! 
@@ -6395,13 +6386,13 @@ Size: !filesize! bytes | Modified: !filemodified!
 315:          
 316:         // Attribution du rôle 
 317:         _grantRole(role, account); 
-318: 		roleMembers[role].push(account); 
+318: 		roleMembers[role].add(account); 
 319:          
 320:         // Mettre à jour les rôles de l'utilisateur 
-321:         userRoles[account].push(role); 
+321:         userRoles[account].add(role); 
 322:          
 323:         // Enregistrer le log 
-324:         permissionLogs[account].push(PermissionLog({ 
+324:         permissionLogs[account].add(PermissionLog({ 
 325:             user: account, 
 326:             role: role, 
 327:             granted: true, 
@@ -6445,7 +6436,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 365:         _removeUserRole(account, role); 
 366:          
 367:         // Enregistrer le log 
-368:         permissionLogs[account].push(PermissionLog({ 
+368:         permissionLogs[account].add(PermissionLog({ 
 369:             user: account, 
 370:             role: role, 
 371:             granted: false, 
@@ -6477,7 +6468,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 397:             ipfsConfig: ipfsConfig 
 398:         }); 
 399:          
-400:         registeredContractsSet.push(contractAddress); 
+400:         registeredContractsSet.add(contractAddress); 
 401:          
 402:         emit ContractRegistered(contractAddress, name, version, msg.sender, block.timestamp); 
 403:     } 
@@ -6542,7 +6533,7 @@ Size: !filesize! bytes | Modified: !filemodified!
 462:          
 463:         // Attribution à l'exécuteur 
 464:         _grantRole(emergencyRole, msg.sender); 
-465:         roleMembers[emergencyRole].push(msg.sender); 
+465:         roleMembers[emergencyRole].add(msg.sender); 
 466:          
 467:         // Programmer la révocation automatique 
 468:         _scheduleRoleRevocation(emergencyRole, msg.sender, block.timestamp + duration); 
@@ -6701,10 +6692,10 @@ Size: !filesize! bytes | Modified: !filemodified!
 621:         } 
 622:          
 623:         super.grantRole(role, account); 
-624:         roleMembers[role].push(account); 
+624:         roleMembers[role].add(account); 
 625:          
 626:         if (_hasRoleInArray(userRoles[account], role)) { 
-627:             userRoles[account].push(role); 
+627:             userRoles[account].add(role); 
 628:         } 
 629:     } 
 630:      
@@ -10193,5 +10184,5 @@ Total script files: 4
 Total test files: 5 
 Total code files: 36 
  
-Generated: 06/01/2026 18:22:45,87 
+Generated: 06/01/2026 20:02:32,96 
 ============================================================================== 

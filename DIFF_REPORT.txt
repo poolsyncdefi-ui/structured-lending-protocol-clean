@@ -1,7 +1,7 @@
 ============================================================================== 
 STRUCTURED LENDING PROTOCOL - DIFF REPORT 
 ============================================================================== 
-Date: 06/01/2026 Time: 19:40:49,79 
+Date: 06/01/2026 Time: 20:13:02,82 
  
 [GIT STATUS] 
 ------------------------------------------------------------------------------ 
@@ -11,19 +11,19 @@ Your branch is up to date with 'origin/main'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
+	modified:   DIFF_REPORT.txt
 	modified:   PROJECT_SHARE.txt
-	modified:   contracts/governance/GovernanceDAO.sol
-	modified:   contracts/governance/ReputationToken.sol
-	modified:   contracts/nft-market/LoanNFT.sol
-	modified:   contracts/security/AccessController.sol
-	modified:   package.json
+	modified:   stdout.txt
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	Convert
-	DIFF_REPORT.txt
-	Old/
-	stdout.txt
+	test/AccessController.test.js
+	test/EmergencyExecutor.test.js
+	test/GovernanceDAO.test.js
+	test/LoanNFT.test.js
+	test/ReputationToken.test.js
+	test/helpers.js
+	test/integration/
 
 no changes added to commit (use "git add" and/or "git commit -a")
  
@@ -34,18 +34,15 @@ No changes detected in the working directory.
  
 [GIT DIFF SUMMARY] 
 ============================================================================== 
- PROJECT_SHARE.txt                        |  6 +-
- contracts/governance/GovernanceDAO.sol   | 94 ++++++++++++++++----------------
- contracts/governance/ReputationToken.sol |  2 +-
- contracts/nft-market/LoanNFT.sol         | 12 +---
- contracts/security/AccessController.sol  | 19 ++++---
- package.json                             |  4 +-
- 6 files changed, 65 insertions(+), 72 deletions(-)
+ DIFF_REPORT.txt   |  39 ++----
+ PROJECT_SHARE.txt | 263 +++++++++++++++++------------------
+ stdout.txt        | 408 ++++++++++++++++++++++++++++++++++++++++++++++--------
+ 3 files changed, 490 insertions(+), 220 deletions(-)
  
 [REPORT SUMMARY] 
 ============================================================================== 
 Total changed files: 0 
-Report generated: 06/01/2026 19:40:50,08 
+Report generated: 06/01/2026 20:13:03,07 
  
 INSTRUCTIONS FOR CODE REVIEW: 
 1. Files are listed with full paths for precise location 
