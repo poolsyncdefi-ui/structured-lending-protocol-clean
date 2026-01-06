@@ -3,12 +3,12 @@ STRUCTURED LENDING PROTOCOL - FULL PROJECT SHARE
 ============================================================================== 
 GitHub: poolsyncdefi-ui/structured-lending-protocol-clean 
 Repo URL: https://github.com/poolsyncdefi-ui/structured-lending-protocol-clean 
-Date: 06/01/2026 Time: 20:30:35,71 
+Date: 06/01/2026 Time: 20:56:20,10 
  
 [GIT INFORMATION] 
 ------------------------------------------------------------------------------ 
 Branch: main 
-Commit: df8eeff 
+Commit: ed952d2 
  
 [CONTRACTS DIRECTORY - *.sol files] 
 ============================================================================== 
@@ -9218,30 +9218,24 @@ Size: !filesize! bytes | Type: !fileext! | Modified: !filemodified!
 1: const { expect } = require("chai"); 
 2: const { ethers } = require("hardhat"); 
 3: describe("GovernanceDAO", function() { 
-4:   let contract; 
-5:   let owner; 
-6:   let addr1; 
-7:   let addr2; 
-8:   beforeEach(async function() { 
-9:     [owner, addr1, addr2] = await ethers.getSigners(); 
+4:   it("Should deploy", async function() { 
+5:     const [owner] = await ethers.getSigners(); 
+6:      
+7:     const ReputationToken = await ethers.getContractFactory("ReputationToken"); 
+8:     const reputationToken = await ReputationToken.deploy(); 
+9:     await reputationToken.deployed(); 
 10:      
-11:     const ContractFactory = await ethers.getContractFactory("GovernanceDAO"); 
-12:     contract = await ContractFactory.deploy(); 
-13:     await contract.deployed(); 
-14:   }); 
-15:   describe("Deployment", function() { 
-16:     it("Should deploy successfully", async function() { 
-17:       expect(contract.address).to.exist; 
-18:       expect(contract.address).to.be.a('string'); 
-19:     }); 
+11:     const GovernanceDAO = await ethers.getContractFactory("GovernanceDAO"); 
+12:     const governanceDAO = await GovernanceDAO.deploy( 
+13:       reputationToken.address, 
+14:       owner.address, 
+15:       reputationToken.address 
+16:     ); 
+17:      
+18:     await governanceDAO.deployed(); 
+19:     expect(governanceDAO.address).to.exist; 
 20:   }); 
-21:   describe("Basic functions", function() { 
-22:     it("Should have basic functionality", async function() { 
-23:       // Add your specific tests here 
-24:       // Example: expect(await contract.name()).to.exist; 
-25:     }); 
-26:   }); 
-27: }); 
+21: }); 
 ------------------------------------------------------------------------------ 
  
 TEST !test_count! | !filepath! 
@@ -10391,5 +10385,5 @@ Total script files: 4
 Total test files: 12 
 Total code files: 43 
  
-Generated: 06/01/2026 20:30:40,54 
+Generated: 06/01/2026 20:56:24,92 
 ============================================================================== 

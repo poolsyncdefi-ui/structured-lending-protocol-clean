@@ -1,61 +1,44 @@
-PS D:\structured-lending-protocol-clean> powershell -ExecutionPolicy Bypass -File .\fix-governance-test.ps1
-Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:149 : 1
+PS D:\structured-lending-protocol-clean> powershell -ExecutionPolicy Bypass -File .\create-correct-governance-test.ps1
+Au caractère D:\structured-lending-protocol-clean\create-correct-governance-test.ps1:151 : 30
++     if ($LASTEXITCODE -eq 0) {
++                              ~
+Accolade fermante « } » manquante dans le bloc d'instruction ou définition du type manquante.
+Au caractère D:\structured-lending-protocol-clean\create-correct-governance-test.ps1:156 : 95
++ ...  "GovernanceDAO" -or $line -match "âœ“" -or $line -match "passing") {
++                                                                       ~
+Jeton inattendu « ) » dans l’expression ou l’instruction.
+Au caractère D:\structured-lending-protocol-clean\create-correct-governance-test.ps1:159 : 9
++         }
++         ~
+Jeton inattendu « } » dans l’expression ou l’instruction.
+Au caractère D:\structured-lending-protocol-clean\create-correct-governance-test.ps1:160 : 5
++     } else {
++     ~
+Jeton inattendu « } » dans l’expression ou l’instruction.
+Au caractère D:\structured-lending-protocol-clean\create-correct-governance-test.ps1:170 : 1
 + } else {
 + ~
 Jeton inattendu « } » dans l’expression ou l’instruction.
-Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:177 : 59
-+ Write-Host "3. Start with simpler contracts first (LoanNFT, Reputatio ...
-+                                                           ~
-Argument manquant dans la liste de paramètres.
-Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:184 : 54
-+ $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-+                                                      ~~
-Le terminateur " est manquant dans la chaîne.
-Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:149 : 8
-+ } else {
-+        ~
-Accolade fermante « } » manquante dans le bloc d'instruction ou définition du type manquante.
     + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : UnexpectedToken
+    + FullyQualifiedErrorId : MissingEndCurlyBrace
 
-PS D:\structured-lending-protocol-clean> .\SCRIPT_BATCH_ALTERNATIF_SIMPLE.bat
+PS D:\structured-lending-protocol-clean> .\create-governance-test.bat
 Page de codes active : 65001
+'olor' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
 ========================================
-  SIMPLE TEST FIX FOR GOVERNANCEDAO
-========================================
+'cho' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+'cho' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+'cho.' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+Creating test file with correct constructor...
+'cho.' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+Test file created: test\GovernanceDAO.test.js
 
-Creating simple test file...
-const { expect } = require("chai"
-const { ethers } = require("hardhat");
-
-describe("GovernanceDAO", function() {
-  it("Should compile successfully", async function() {
-    // Just test that the contract compiles
-    const GovernanceDAO = await ethers.getContractFactory("GovernanceDAO");
-    expect(GovernanceDAO).to.exist;
-  });
-
-  it("Should have expected interface", async function() {
-    const GovernanceDAO = await ethers.getContractFactory("GovernanceDAO");
-    // Check that common governor functions exist
-    expect(typeof GovernanceDAO.interface.functions["votingDelay()"]).to.equal("object");
-    expect(typeof GovernanceDAO.interface.functions["votingPeriod()"]).to.equal("object");
-  });
-});
-
-File updated. Now testing...
-
-Error HH305: Unrecognized param --timeout
-
-For more info go to https://v2.hardhat.org/HH305 or run Hardhat with --show-stack-traces
-
-========================================
-  TESTING SIMPLER CONTRACTS FIRST
-========================================
-
-GovernanceDAO is complex. Let's test simpler contracts:
-
-Testing LoanNFT...
+Compiling contracts...
 ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
  --> contracts/governance/GovernanceDAO.sol:1:1:
   |
@@ -67,31 +50,10 @@ Error HH600: Compilation failed
 
 For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
 
-Testing ReputationToken...
-ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
- --> contracts/governance/GovernanceDAO.sol:1:1:
-  |
-1 | ﻿// SPDX-License-Identifier: MIT
-  | ^
-
-
-Error HH600: Compilation failed
-
-For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
-
+COMPILATION FAILED
+Please check errors above.
 Appuyez sur une touche pour continuer...
-PS D:\structured-lending-protocol-clean> npx hardhat test test/LoanNFT.test.js
-ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
- --> contracts/governance/GovernanceDAO.sol:1:1:
-  |
-1 | ﻿// SPDX-License-Identifier: MIT
-  | ^
-
-
-Error HH600: Compilation failed
-
-For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
-PS D:\structured-lending-protocol-clean> npx hardhat test test/ReputationToken.test.js
+PS D:\structured-lending-protocol-clean> npx hardhat test test\GovernanceDAO.test.js
 ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
  --> contracts/governance/GovernanceDAO.sol:1:1:
   |

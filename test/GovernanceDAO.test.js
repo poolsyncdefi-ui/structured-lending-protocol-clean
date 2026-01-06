@@ -2,30 +2,21 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("GovernanceDAO", function() {
-  let contract;
-  let owner;
-  let addr1;
-  let addr2;
-
-  beforeEach(async function() {
-    [owner, addr1, addr2] = await ethers.getSigners();
+  it("Should deploy", async function() {
+    const [owner] = await ethers.getSigners();
     
-    const ContractFactory = await ethers.getContractFactory("GovernanceDAO");
-    contract = await ContractFactory.deploy();
-    await contract.deployed();
-  });
-
-  describe("Deployment", function() {
-    it("Should deploy successfully", async function() {
-      expect(contract.address).to.exist;
-      expect(contract.address).to.be.a('string');
-    });
-  });
-
-  describe("Basic functions", function() {
-    it("Should have basic functionality", async function() {
-      // Add your specific tests here
-      // Example: expect(await contract.name()).to.exist;
-    });
+    const ReputationToken = await ethers.getContractFactory("ReputationToken");
+    const reputationToken = await ReputationToken.deploy();
+    await reputationToken.deployed();
+    
+    const GovernanceDAO = await ethers.getContractFactory("GovernanceDAO");
+    const governanceDAO = await GovernanceDAO.deploy(
+      reputationToken.address,
+      owner.address,
+      reputationToken.address
+    );
+    
+    await governanceDAO.deployed();
+    expect(governanceDAO.address).to.exist;
   });
 });
