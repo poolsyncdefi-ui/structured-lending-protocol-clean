@@ -1,383 +1,105 @@
+PS D:\structured-lending-protocol-clean> powershell -ExecutionPolicy Bypass -File .\fix-governance-test.ps1
+Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:149 : 1
++ } else {
++ ~
+Jeton inattendu « } » dans l’expression ou l’instruction.
+Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:177 : 59
++ Write-Host "3. Start with simpler contracts first (LoanNFT, Reputatio ...
++                                                           ~
+Argument manquant dans la liste de paramètres.
+Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:184 : 54
++ $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
++                                                      ~~
+Le terminateur " est manquant dans la chaîne.
+Au caractère D:\structured-lending-protocol-clean\fix-governance-test.ps1:149 : 8
++ } else {
++        ~
+Accolade fermante « } » manquante dans le bloc d'instruction ou définition du type manquante.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
 
-========================================
-  FINAL SHARE - BATCH ONLY
-========================================
-
-1. CREATE FULL SHARE (all files with line numbers)
-2. CREATE DIFF SHARE (changed files only)
-3. GIT COMMIT + PUSH
-4. EXIT
-
-Enter choice (1-4): 4
-PS D:\structured-lending-protocol-clean> .\TestBatch.bat
+PS D:\structured-lending-protocol-clean> .\SCRIPT_BATCH_ALTERNATIF_SIMPLE.bat
 Page de codes active : 65001
-'r' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'CREATING' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ot' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ot' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Creating' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'GovernanceDAO.test.js' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Creating' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'const' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'describe("GovernanceDAO"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'let' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'let' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'beforeEachasync' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'[owner]' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'const' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'governanceDAO' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'await' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'describe("Deployment"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'it("Should deploy successfully"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'//' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'expect(governanceDAO.address).to.exist' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'it("Should have correct initial state"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'//' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'//' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'test\GovernanceDAO.test.js' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'LoanNFT.test.js' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Creating' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'const' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'describe("LoanNFT"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'let' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'let' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'beforeEachasync' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'[owner]' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'const' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'loanNFT' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'await' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'describe("Basic Functions"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'it("Should have a name"' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'//' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'test\LoanNFT.test.js' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'TEST' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Created' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'•' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
+========================================
+  SIMPLE TEST FIX FOR GOVERNANCEDAO
+========================================
 
-To add more tests, create files like:
-  test\ReputationToken.test.js
-  test\AccessController.test.js
+Creating simple test file...
+const { expect } = require("chai"
+const { ethers } = require("hardhat");
 
-To run tests:
-  npx hardhat test test\GovernanceDAO.test.js
+describe("GovernanceDAO", function() {
+  it("Should compile successfully", async function() {
+    // Just test that the contract compiles
+    const GovernanceDAO = await ethers.getContractFactory("GovernanceDAO");
+    expect(GovernanceDAO).to.exist;
+  });
 
-Press any key to open the test directory...
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-  it("Should deploy multiple contracts", async function() {
-    const [owner] = await ethers.getSigners();
-
-    const ReputationToken = await ethers.getContractFactory("ReputationToken");
-    const rt = await ReputationToken.deploy();
-    await rt.deployed();
-
-    const LoanNFT = await ethers.getContractFactory("LoanNFT");
-    const nft = await LoanNFT.deploy();
-    await nft.deployed();
-
-    expect(rt.address).to.exist;
-    expect(nft.address).to.exist;
+  it("Should have expected interface", async function() {
+    const GovernanceDAO = await ethers.getContractFactory("GovernanceDAO");
+    // Check that common governor functions exist
+    expect(typeof GovernanceDAO.interface.functions["votingDelay()"]).to.equal("object");
+    expect(typeof GovernanceDAO.interface.functions["votingPeriod()"]).to.equal("object");
   });
 });
 
+File updated. Now testing...
+
+Error HH305: Unrecognized param --timeout
+
+For more info go to https://v2.hardhat.org/HH305 or run Hardhat with --show-stack-traces
+
 ========================================
-  TEST STRUCTURE COMPLETE
+  TESTING SIMPLER CONTRACTS FIRST
 ========================================
 
-Created test files:
-  test\GovernanceDAO.test.js
-  test\LoanNFT.test.js
-  test\ReputationToken.test.js
-  test\integration\FullProtocol.test.js
+GovernanceDAO is complex. Let's test simpler contracts:
 
-To run tests:
-  npx hardhat test
+Testing LoanNFT...
+ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
+ --> contracts/governance/GovernanceDAO.sol:1:1:
+  |
+1 | ﻿// SPDX-License-Identifier: MIT
+  | ^
 
-To run specific test:
-  npx hardhat test test\GovernanceDAO.test.js
+
+Error HH600: Compilation failed
+
+For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
+
+Testing ReputationToken...
+ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
+ --> contracts/governance/GovernanceDAO.sol:1:1:
+  |
+1 | ﻿// SPDX-License-Identifier: MIT
+  | ^
+
+
+Error HH600: Compilation failed
+
+For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
 
 Appuyez sur une touche pour continuer...
-PS D:\structured-lending-protocol-clean> .\TestBatch.bat
-Page de codes active : 65001
-'0A' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'CREATING' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Creating' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'t' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'t' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Creating' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'1.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'Creating' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'const' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'describe' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'let' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'let' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'beforeEach' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'[owner]' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'const' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'governanceDAO' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'await' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'it' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'expect' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'})' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'test\GovernanceDAO.test.js' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'2.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'cho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'o' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'test\LoanNFT.test.js' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'m' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-const { expect } = require("chai");
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho.' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-'ho' n’est pas reconnu en tant que commande interne
-ou externe, un programme exécutable ou un fichier de commandes.
-La syntaxe de la commande n’est pas correcte.
-PS D:\structured-lending-protocol-clean>
-PS D:\structured-lending-protocol-clean> .\create-test-structure.ps1
-========================================
-  CREATING TEST STRUCTURE
-========================================
+PS D:\structured-lending-protocol-clean> npx hardhat test test/LoanNFT.test.js
+ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
+ --> contracts/governance/GovernanceDAO.sol:1:1:
+  |
+1 | ﻿// SPDX-License-Identifier: MIT
+  | ^
 
-Created test/integration directory
 
-Creating test files for 5 contracts...
+Error HH600: Compilation failed
 
-  Created: test\GovernanceDAO.test.js
-  Created: test\LoanNFT.test.js
-  Created: test\ReputationToken.test.js
-  Created: test\AccessController.test.js
-  Created: test\EmergencyExecutor.test.js
+For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
+PS D:\structured-lending-protocol-clean> npx hardhat test test/ReputationToken.test.js
+ParserError: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.
+ --> contracts/governance/GovernanceDAO.sol:1:1:
+  |
+1 | ﻿// SPDX-License-Identifier: MIT
+  | ^
 
-  Created: test\integration\FullProtocol.test.js
 
-  Created: test\helpers.js
+Error HH600: Compilation failed
 
-========================================
-  TEST STRUCTURE CREATED
-========================================
-
-Summary:
-  Created 5 test files
-  Created integration test
-  Created helpers file
-
-Test files:
-  - AccessController.test.js
-  - EmergencyExecutor.test.js
-  - GovernanceDAO.test.js
-  - helpers.js
-  - LoanNFT.test.js
-  - LoanPool.test.js
-  - ReputationToken.test.js
-  - Structure des tests.txt
-  - test-security-v2.js
-  - test-v2-complete.js
-  - Tests Exhaustifs
-
-To run tests:
-  npx hardhat test
-  OR
-  npx hardhat test test/GovernanceDAO.test.js
-
-Press any key to exit...
-
+For more info go to https://v2.hardhat.org/HH600 or run Hardhat with --show-stack-traces
 PS D:\structured-lending-protocol-clean>

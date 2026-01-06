@@ -1,7 +1,7 @@
 ============================================================================== 
 STRUCTURED LENDING PROTOCOL - DIFF REPORT 
 ============================================================================== 
-Date: 06/01/2026 Time: 20:13:02,82 
+Date: 06/01/2026 Time: 20:22:44,03 
  
 [GIT STATUS] 
 ------------------------------------------------------------------------------ 
@@ -12,18 +12,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   DIFF_REPORT.txt
-	modified:   PROJECT_SHARE.txt
 	modified:   stdout.txt
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	test/AccessController.test.js
-	test/EmergencyExecutor.test.js
-	test/GovernanceDAO.test.js
-	test/LoanNFT.test.js
-	test/ReputationToken.test.js
-	test/helpers.js
-	test/integration/
 
 no changes added to commit (use "git add" and/or "git commit -a")
  
@@ -34,15 +23,14 @@ No changes detected in the working directory.
  
 [GIT DIFF SUMMARY] 
 ============================================================================== 
- DIFF_REPORT.txt   |  39 ++----
- PROJECT_SHARE.txt | 263 +++++++++++++++++------------------
- stdout.txt        | 408 ++++++++++++++++++++++++++++++++++++++++++++++--------
- 3 files changed, 490 insertions(+), 220 deletions(-)
+ DIFF_REPORT.txt |  29 +---
+ stdout.txt      | 441 ++++++++++----------------------------------------------
+ 2 files changed, 79 insertions(+), 391 deletions(-)
  
 [REPORT SUMMARY] 
 ============================================================================== 
 Total changed files: 0 
-Report generated: 06/01/2026 20:13:03,07 
+Report generated: 06/01/2026 20:22:44,26 
  
 INSTRUCTIONS FOR CODE REVIEW: 
 1. Files are listed with full paths for precise location 
